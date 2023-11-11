@@ -1,0 +1,35 @@
+Linker 
+
+* Process of collecting and combining various pieces of code and data into single file that 
+can be loaded into memory and executed.  
+* Linking performed at compile time, when source code is translated to machine code, at 
+load time, when program is loaded into memory and executed by loader and at run time 
+by application programs. 
+
+Types: 
+
+a) Linking Loader: Performs all linking and relocation operations directly into main memory 
+for execution. 
+
+b) Linkage Editor: Produces a linked version of program called as load module or executable 
+image. This load module is written into file or library for later execution. 
+
+For More Study Materials : https://www.keralanotes.com/6 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ 
+c) Dynamic Linker: This linking postpones the linking function until execution time. Also 
+called as dynamic loading. 
+ 
+Loader 
+ Utility of an operating system. 
+ Copies program from a storage device to computer’s main memory.  
+ They can replace virtual address with real address. 
+ They are invisible to user. 
+ 
+Debugger 
+ An Interactive debugging system provides programmers with facilities that aid in testing 
+and debugging of programs.  
+ Debugging means locating bugs or faults in program. 
+ Helps in fixing error. 
+ Determination of exact nature and location of error in the program.

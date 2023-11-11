@@ -1,0 +1,52 @@
+1. SIC/XE Instructions:
+
+i. Instructions those perform Arithmetic operation on Memory
+a. LDB- Load the register ‘B’ with some value.
+Eg: LDBx- Load value of x in to register B.
+b. STB- Store the register ‘B’ content in to some variable.
+Eg: STBx- Store register ‘B’ content in to variable x.
+ii. Instructions those perform floating point Arithmetic operation
+a. ADDF
+b. SUBF
+c. MULF
+d. DIVF
+Here F is the floating point register
+Eg: ADDF, here register ‘B’ contents are added with Accumulator content
+and result is left with accumulator.
+iii. Instruction that take operand from Register
+RMO-Register move
+Eg: RMO S,B Reg ister ‘S’ content is moved to ‘B’ register.
+iv. Instruction which perform register arithmetic operation
+a. ADDR
+b. SUBR
+c. MULTR
+d. DIVR
+Eg: ADDR S,B
+add value of register B with register Sand store result in register B.
+
+7. Input and Output:
+
+The SIC/XE supports all the I/O instructions in the standard version.
+There are special I/O channels which are utilized for data transfer when CPU
+is involved in another process at same time.
+Channels control associated I/O channels.
+There can be maximum of 16 I/O channels each supporting maximum of 16
+devices.16 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ Data movement instructions are used to transfer data from one location to another location in memory. 
+1. Move instruction 
+MOVE M,R1 
+R1 contains the address of the data. M contains the data. 
+2. Load instruction 
+LDB 5,R1 
+R1 contains the address of the data. 5 contains the data. 
+3. Store instruction 
+STB R1,5 
+R1 contains the address of the data. 5 contains the data. 
+4. Transfer instruction 
+LDA 5,R1 
+R1 contains the address of the data. 5 contains the address of the data. 
+5. Exchange instruction 
+XCH R1,R2 
+R1 and R2 contains the address of the data. 

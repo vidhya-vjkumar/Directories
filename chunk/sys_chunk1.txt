@@ -1,0 +1,25 @@
+**Module 1**
+
+**1.1 Introduction to System Software**
+
+System software is the software that manages computer hardware and software resources and provides common services for computer programs. It includes operating systems, device drivers, compilers, and other system utilities.
+
+**1.2 Operating Systems**
+
+An operating system (OS) is a software that manages computer hardware and software resources and provides common services for computer programs. It is the most important piece of software on a computer, and it is responsible for managing the computer's resources, including memory, storage, and processing power.
+
+**1.3 Device Drivers**
+
+A device driver is a software program that allows a computer to communicate with a specific hardware device. Device drivers are essential for the proper functioning of hardware devices, such as printers, scanners, and keyboards.
+
+**1.4 Compilers**
+
+A compiler is a software program that translates a high-level programming language into a low-level programming language. Compilers are used to convert source code into machine code, which can be executed by a computer's CPU.
+
+**1.5 Other System Utilities**
+
+Other system utilities include programs such as file managers, text editors, and debuggers. These programs are used to manage files, edit text, and debug programs.
+
+**1.6 Summary**
+
+System software is essential for the proper functioning of a computer. It manages computer hardware and software resources, provides common services for computer programs, and includes operating systems, device drivers, compilers, and other system utilities.  

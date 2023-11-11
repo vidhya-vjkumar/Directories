@@ -1,0 +1,72 @@
+
+    * **RSUB:** To return**SIC/XE Architecture**
+
+1. **Instruction Set**
+
+* 16-bit instruction format
+* 2-part op-code
+* 4 addressing modes
+* Conditional branch instructions
+* 5 types of instructions:
+    * Data transfer
+    * Arithmetic
+    * Logical
+    * Program control
+    * Input/Output
+
+2. **Memory**
+
+* 16-bit memory address
+* Maximum memory size of 64K bytes
+* 16-bit words stored in memory
+* Memory mapped I/O
+
+3. **Registers**
+
+* 4 general-purpose registers: A, X, L, and S
+* 1 accumulator register (A)
+* 1 program counter (PC)
+* 1 instruction register (IR)
+* 1 condition code register (CC)
+
+4. **Arithmetic and Logical Operations**
+
+* Arithmetic operations: addition, subtraction, multiplication, and division
+* Logical operations: AND, OR, XOR, and NOT
+
+5. **Program Control Instructions**
+
+* Conditional branch instructions:
+    * BEQ: Branch if equal
+    * BNE: Branch if not equal
+    * BLT: Branch if less than
+    * BGT: Branch if greater than
+* Unconditional branch instructions:
+    * BRA: Branch always
+    * RET: Return from subroutine
+
+6. **Input and Output Instructions**
+
+* I/O operations are executed by transferring a single byte each time.
+* Target port is specified by last 8 bits of register A.
+* Each device is assigned a unique 8 bit code to send and receive data and
+control signals.
+
+7. **Input and Output**
+
+* Performed by transferring 1 byte at a time to or from right most 8 bits of
+register A (Accumulator).
+* Test Device (TD) instruction tests whether the addressed device is ready to
+send and receive a byte of data.
+* Read Data (RD) and Write Data (WD) is used for reading and writing of
+data.
+
+8. **Data Movement and Storage Definitions**
+
+* LDA, STA, LDX, STX all uses 3 byte word.
+* LDCH, STCH are associated with characters which uses 1 byte.
+* Storage definitions are:
+    * WORD - ONE WORD CONSTANT
+    * RESW- ONE WORD VARIABLE
+    * BYTE- ONE BYTE CONSTANT
+    * RESB- ONE BYTE VARIABLE
