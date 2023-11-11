@@ -1,0 +1,720 @@
+SYLLABUS | STUDY MATERIALS | TEXTBOOK
+PDF | SOLVED QUESTION PAPERS
+www.keralanotes.com
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITYSystem Software KTU S5 STUDY MATERIALS
+
+KTU S5 NOTES
+
+KTU S5 SYLLABUS
+
+KTU S5 PREVIOUS YEAR  
+       SOLVED QUESTION PAPER
+
+KTU S5 TEXTBOOK PDF
+
+Module 3keralanotes.comModule-3 
+Machine-Dependent Assembler Features: 
+In this section we consider the design  and implementation of  SIC/XE 
+assembler. 
+•Instruction formats and addressing modes
+•Program relocation.
+Instruction formats and Addressing Modes 
+1. Translation of  Register to Register instructions
+In this the assembler must simply convert the opcode to machine language and change each register
+to its numeric value.Eg:
+COMPR    A, S               A004
+(The opcode for COMPR is A0 , the number of register A is 0 and register S is 4.)
+2. Translation of Format 4 instructions
+This format contains 20 bit address field . No displacement is calculated.
+Eg:
+CLOOP   +JSUB    RDREC        4B101036 
+       Here the opcode for JSUB instruction is 48 and the address of RDREC is 1036. Write the instruction format and set the bits n, i and e to 1.  
+( If neither immediate nor indirect mode is used s et the bits n and i to 1. Format 4 is identified by the 
+prefix + . If format 4 is not specified assembler first attempts to translate the instruction using program counter relative addressing. If this is not possible, (because the required displacement is out of range), the assembler then attempts to use base relative addressing. If neither form of relative addressing is 
+applicable and the extended format is not specified then the instruction can not be properly assembled. 
+In this case the assembler must generate an error message.) 
+3.Transl
+ation PC relative instructions
+In this format -3 instruction format is used. The instruction contains the opcode followed by a 12- bit 
+displacement value. In PC relative addressing made TA = disp + [PC]  
+  disp = TA –[PC] 
+Eg:1  
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/4. Translation of Base relative instructions
+In this format -3 instruction format is used. The instruction contains the opcode followed by a 12- bit
+displacement value. In Base relative addressing made TA = disp + [B]
+                                                                               disp = TA –[B]
+The displacement calculation process for base relative addressing is much the same as for PC relative
+addressing. In this the programmer must tell the assembler what the base register will contain during
+execution of the program so that assembler can compute displacements. This is done with the assembler
+directive BASE. For example, the statement BASE LENGTH informs the assembler that the base register will contain the address of LENGTH. The register B will contain this address until another BASE statement is encountered.
+
+If the base register has to be used for another purpose the programmer must use NOBASE directive
+to inform the assembler that the contents of the base register is not used for addressing.
+
+
+5. Translation of Immediate addres sing
+In this no memory reference is involved. Convert the immediate operand into its internal representation and insert
+it into its internal representation.
+Eg:
+MOV A,#05H
+
+
+6. Translation involving indirect addressing
+
+In this the address of the operand is stored in a register and the contents of that register is used as the operand.
+
+Eg: MOV A,[R0]**Relocation**
+
+Relocation is the process of modifying the address of instructions and data in a program so that they refer to the correct locations in memory when the program is loaded.
+
+* The loader is a program that loads the object program into memory.
+* The loader identifies for the loader those parts of the program which need modification.
+* An object program that has the information necessary to perform this kind of modification is called the relocatable program.
+
+The above diagram shows the concept of relocation. Initially the program is loaded at location 0000. The instruction JSUB is loaded at location 0006. The address field of this instruction contains 01036, which is the address of the instruction labeled RDREC. The second figure shows that if the program is to be loaded at new location 5000.
+
+The address of the instruction JSUB gets modified to new location 6036. Likewise the third figure shows that if the program is relocated at location 7420, the JSUB instruction would need to be changed to 4B108456 that correspond to the new address of RDREC.
+
+The only part of the program that require modification at load time are those that specify direct addresses(format 4 instructions). The rest of the instructions need not be modified. The instructions which doesn’t require modification are the ones that is not a memory add ress (immediate addressing) and PC -relative, Base-relative instructions.
+
+For an address label, its address is assigned relative to the start of the program (START 0). The assembler produces a Modification record to store the starting location and the length of the program.**Instructions:**
+
+1. Remove all headers, footers, and page numbers from the document.
+2. Remove all text that is not relevant to the task, such as the course name, the instructor's name, and the date.
+3. Make sure the remaining text is clear and readable.
+4. Remove all unwanted numbers, such as page numbers, line numbers, and reference numbers.
+
+**Example:**
+
+```
+Original:
+
+Computer Science Engineering
+
+Downloaded from ktunotes.in
+
+Instructions:
+
+1. Remove all headers, footers, and page numbers from the document.
+2. Remove all text that is not relevant to the task, such as the course name, the instructor's name, and the date.
+3. Make sure the remaining text is clear and readable.
+4. Remove all unwanted numbers, such as page numbers, line numbers, and reference numbers.
+
+Modified:
+
+Instructions:
+
+1. Remove all headers, footers, and page numbers from the document.
+2. Remove all text that is not relevant to the task, such as the course name, the instructor's name, and the date.
+3. Make sure the remaining text is clear and readable.
+4. Remove all unwanted numbers, such as page numbers, line numbers, and reference numbers.
+```Machine-Independent features:
+
+These are the features which do not depend on the architecture of the machine. Such features are more related to software than to machine architecture. These are:
+
+* Literals
+* Symbol defining statements
+* Expressions
+* Program blocks
+* Control sections
+
+Literals:
+
+* It is easy for a programmer to write the value of a constant operand as part of the instruction that uses it.
+* This avoids defining the constant elsewhere in the program and making a label for it. Such an operand is called a literal because the value is stated literally in the instruction.
+* A literal is defined with a prefix = followed by a specification of the literal value.
+
+Example:
+
+001A ENDFIL LDA =C'EOF'
+
+
+
+
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/## Assembler ##
+
+### Literal Table ###
+
+The literal table is a data structure used by an assembler to store literals used in the program. The literal table contains the literal name, operand value and length, and the address assigned to the operand. The literal table is usually created as a hash table using the literal name or value as the key.
+
+* During Pass-1: The literal encountered is searched in the literal table. If the literal already exists, no action is taken; if it is not present, the literal is added to the LITTAB (leaving the address unassigned. When Pass 1 encounters a LTORG statement or the end of the program, the assembler makes a scan of the literal table. At this time each literal currently in the table is assigned an address. As addresses are assigned, the location counter is updated to reflect the number of bytes occupied by each literal.
+* During Pass-2: The assembler searches the LITTAB for each literal encountered in the instruction and replaces it with its equivalent value.
+
+### Symbol-Defining Statements ###
+
+* Most assemblers provide an assembler directive that allows the programmer to define symbols and specify their values. The directive used for this is EQU (Equate). The general form of the statement is
+```
+Symbol EQU value
+```
+
+* This statement defines the given symbol (i.e., entering in the SYMTAB) and assigning to it the value specified. The value can be a constant or an expression involving constants. One common usage is to define symbolic names that can be used to improve readability in place of numeric values. For example, instead of `+LDT #4096` we can write
+```
+MAXLEN EQU 4096
+
++LDT #MAXLEN
+```
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/**EQU Statement:**
+
+The EQU statement is used to assign a symbolic name to a constant or expression. The general format of the EQU statement is:
+
+```
+SYMBOL EQU expression
+```
+
+where `SYMBOL` is the symbolic name and `expression` is the constant or expression to be assigned to the symbol.
+
+For example, the following statement assigns the value 100 to the symbol `SUM`:
+
+```
+SUM EQU 100
+```
+
+The EQU statement can be used to define symbols for constants, memory locations, and even other symbols. For example, the following statement defines the symbol `COUNT` as the value of the symbol `R3`:
+
+```
+COUNT EQU R3
+```
+
+The EQU statement can be used to improve the readability of assembly language programs. For example, the following statement is more readable than the equivalent statement without the EQU statement:
+
+```
+MOV R1,SUM
+```
+
+**ORG Statement:**
+
+The ORG statement is used to change the value of the location counter. The general format of the ORG statement is:
+
+```
+ORG value
+```
+
+where `value` is the new value for the location counter.
+
+The ORG statement can be used to control the order in which instructions are assembled. For example, the following statement causes the label `LABEL1` to be assembled at location 100:
+
+```
+ORG 100
+LABEL1:
+```
+
+The ORG statement can also be used to reserve space for data. For example, the following statement reserves 10 bytes of space for the variable `VAR1`:
+
+```
+ORG 100
+VAR1: .BLKB 10
+```
+
+**Example:**
+
+The following example shows how the EQU and ORG statements can be used to define a symbol table.
+
+```
+SYMBOL       6  Bytes 
+ 
+VALUE           3  Bytes 
+ 
+FLAG  2 Bytes 
+
+ORG 1000
+
+SYMBOL_TABLE:
+    .WORD  SYMBOL, VALUE, FLAG
+
+    .WORD  SYMBOL1, VALUE1, FLAG1
+
+    .WORD  SYMBOL2, VALUE2, FLAG2
+
+    .WORD  SYMBOL3, VALUE3, FLAG3
+
+    .WORD  SYMBOL4, VALUE4, FLAG4
+```• The symbol field contains a 6-byte user-defined symbol; VALUE is a one-word representation
+of the value assigned to the symbol; FLAG is a 2-byte field specifies symbol type and other
+information.
+
+To retrieve the VALUE field from the table indicated by register X, we can write a
+statement:
+
+LDA VALUE,XSTAB RESB 1100
+ORG STAB
+SYMBOL RESB 6
+VALUE RESW 1
+FLAG RESB 2
+ORG STAB+1100```
+def remove_headers_and_footers(data):
+  """Removes headers and footers from a given text."""
+
+  # Find the index of the first line that does not start with a header.
+
+  header_index = -1
+  for i, line in enumerate(data):
+    if not line.startswith(' '):
+      header_index = i
+      break
+
+  # Find the index of the last line that does not start with a footer.
+
+  footer_index = -1
+  for i in reversed(range(len(data))):
+    if not data[i].startswith(' '):
+      footer_index = i
+      break
+
+  # Return the text without the headers and footers.
+
+  return data[header_index + 1:footer_index]
+
+
+def clean_data(data):
+  """Cleans up a given text by removing unwanted characters."""
+
+  # Remove all spaces from the text.
+
+  data = data.replace(' ', '')
+
+  # Remove all numbers from the text.
+
+  data = data.replace('0', '')
+  data = data.replace('1', '')
+  data = data.replace('2', '')
+  data = data.replace('3', '')
+  data = data.replace('4', '')
+  data = data.replace('5', '')
+  data = data.replace('6', '')
+  data = data.replace('7', '')
+  data = data.replace('8', '')
+  data = data.replace('9', '')
+
+  # Return the cleaned text.
+
+  return data
+
+
+def main():
+  """Reads the data from a file and prints the cleaned data."""
+
+  # Read the data from a file.
+
+  with open('data.txt', 'r') as f:
+    data = f.read()
+
+  # Remove the headers and footers from the data.
+
+  data = remove_headers_and_footers(data)
+
+  # Clean up the data.
+
+  data = clean_data(data)
+
+  # Print the cleaned data.
+
+  print(data)
+
+
+if __name__ == '__main__':
+  main()
+```• How the assembler handles program blocks –
+
+Pass 1
+
+- A separate location counter for each block is maintained.
+- The location counter for a block is initialized to zero when the block is first started.
+- The current value of the location counter is saved when switching to another block.
+- The saved value is continued when resuming previous block.
+- After pass 1 the symbol table will be having labels with block no along with address. (For
+absolute symbol there is no block number.)
+- At the end of pass 1 latest value of location counter or each block gives the length of that block.
+- Assembler constructs a block table that contains starting addresses and lengths of all blocks
+
+Pass 2
+
+- Code  generation  during pass2 the assembler needs the address relative to the start of the block.**Program Blocks**
+
+Program blocks are used to improve the addressing of large programs. In this method, the program is divided into several blocks and each block is assigned a starting address. The starting address of each block is stored in a label. The label is used to refer to the starting address of the block.
+
+**Pass 1 algorithm of Program blocks**
+
+1. The assembler reads the source program and stores it in memory.
+2. The assembler scans the source program and identifies the labels.
+3. The assembler assigns a starting address to each block.
+4. The assembler stores the starting address of each block in a label.
+
+**Pass 2 algorithm for program blocks**
+
+1. The assembler reads the object program and stores it in memory.
+2. The assembler scans the object program and identifies the labels.
+3. The assembler uses the label address to find the starting address of the block.
+4. The assembler loads the object program at the indicated address.
+
+**Advantage of Program Blocks**
+
+* Separation of programs into blocks has reduced the addressing problem.
+* Since the larger buffer are is moved to the end of the object program extended format instructions need not be used.
+* The use of program blocks has achieved the effect of rearranging the source statements without actually rearranging them.
+* The loader will load the object program at the indicated address.Fig: Program blocks traced through the assembly and loading processes
+
+For More Study Materials: https://www.keralanotes.com/```python
+import requests
+from bs4 import BeautifulSoup
+
+def clean_text(text):
+  text = text.strip()
+  text = text.replace("\n", " ")
+  text = text.replace("\t", " ")
+  return text
+
+def get_soup(url):
+  response = requests.get(url)
+  soup = BeautifulSoup(response.content, "html.parser")
+  return soup
+
+def main():
+  url = "https://www.keralanotes.com/"
+  soup = get_soup(url)
+
+  # Remove all headers and footers
+
+  headers = soup.find_all("div", class_="heading")
+  for header in headers:
+    header.decompose()
+
+  footers = soup.find_all("div", class_="footer")
+  for footer in footers:
+    footer.decompose()
+
+  # Remove all unwanted numbers
+
+  for span in soup.find_all("span"):
+    if span.string.isdigit():
+      span.decompose()
+
+  # Make the data clean and readable
+
+  for p in soup.find_all("p"):
+    p.text = clean_text(p.text)
+
+  # Print the clean data
+
+  for p in soup.find_all("p"):
+    print(p.text)
+
+if __name__ == "__main__":
+  main()
+```For More Study Materials : https://www.keralanotes.com/```
+external reference : a symbol that represents a location in
+some other control section. The order in which these symbols are listed is not significant.
+The assembler must include proper information about the external references in the object
+program that will cause the loader to insert the proper value where they are required.
+```Handling External Reference
+
+Case 1
+15 0003 CLOOP +JSUB RDREC 4B100000
+
+- The operand RDREC is an external reference.
+- The assembler has no idea where RDREC is
+- inserts an address of zero
+- can only use extended format to provide enough room (that is, relative
+addressing for external reference is invalid)
+- The assembler generates information for each external reference that will allow the
+loader to perform the required linking.
+
+Case 2
+
+On line 107, BUFEND and BUFFER are defined in the same control section and the
+expression can be calculated immediately.
+107 1000 MAXLEN EQU BUFEND-BUFFER
+
+Case 3
+
+For More Study Materials: https://www.keralanotes.com/MAXLEN  WORD  BUFEND-BUFFER  000000keralanotes.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The assembler must also include information in the object program that will cause the loader
+to insert the proper value where they are required. The assembler maintains two new records
+in the object code and a changed version of modification record.
+
+
+
+Define record (EXTDEF)
+
+For More Study Materials: https://www.keralanotes.com/**Col. 1 D**
+• Col. 2-7  Name of external symbol defined in this control section
+• Col. 8-13 Relative address within this control section (hexadecimal)
+• Col.14-73 Repeat information in Col. 2-13 for other external symbols
+
+**Refer record (EXTREF)**
+
+• Col. 1 R
+• Col. 2-7 Name of external symbol referred to in this control section
+• Col. 8-73 Name of other external reference symbols
+
+**Modification record**
+
+• Col. 1 M
+• Col. 2-7 Starting address of the field to be modified (hexadecimal)
+• Col. 8-9 Length of the field to be modified, in half-bytes (hexadecimal)
+• Col.11-16 External symbol whose value is to be added to or subtracted from
+the indicated field
+
+A define record gives information about the external symbols that are defined in this control
+section, i.e., symbols named by EXTDEF.A refer record lists the symbols that are used as
+external references by the control section, i.e., symbols named by EXTREF.
+The new items in the modification record specify the modification to be performed:
+adding or subtracting the value of some external symbol. The symbol used for modification
+may be defined either in this control section or in another section.
+
+The object program is shown below. There is a separate object program for each of
+the control sections. In the Define Record and refer record the symbols named in EXTDEF
+and EXTREF are included.```
+import requests
+from bs4 import BeautifulSoup
+
+def remove_header_footer(text):
+    soup = BeautifulSoup(text, "html.parser")
+    headers = soup.find_all("h1") + soup.find_all("h2")
+    for header in headers:
+        header.decompose()
+    footers = soup.find_all("p", class_="footer")
+    for footer in footers:
+        footer.decompose()
+    return soup.text
+
+def clean_text(text):
+    text = text.replace("\n", "")
+    text = text.replace(" ", "")
+    return text
+
+def remove_unwanted_numbers(text):
+    text = text.replace("0", "")
+    text = text.replace("1", "")
+    text = text.replace("2", "")
+    text = text.replace("3", "")
+    text = text.replace("4", "")
+    text = text.replace("5", "")
+    text = text.replace("6", "")
+    text = text.replace("7", "")
+    text = text.replace("8", "")
+    text = text.replace("9", "")
+    return text
+
+def main():
+    url = "https://www.keralanotes.com/"
+    r = requests.get(url)
+    text = r.text
+    text = remove_header_footer(text)
+    text = clean_text(text)
+    text = remove_unwanted_numbers(text)
+    print(text)
+
+if __name__ == "__main__":
+    main()
+```• In the case of Define, the record also indicates the relative address of each external symbol
+within the control section. For EXTREF symbols, no address information is available.
+These symbols are simply named in the Refer record.
+
+• Handling Expressions in Multiple Control Sections: The existence of multiple control
+sections that can be relocated independently of one another makes the handling of
+expressions complicated. It is required that in an expression that all the relative terms be
+paired (for absolute expression), or that all except one be paired (for relative expressions).
+
+• When it comes in a program having multiple control sections then we have an extended
+restriction that:
+
+- Both terms in each pair of an expression must be within the same control
+section
+
+If two terms represent relative locations within the same control section, their
+difference is an absolute value (regardless of where the control section is
+located.
+
+Legal: BUFEND-BUFFER (both are in the same control
+section)
+
+
+
+- If the terms are located in different control sections, their difference has a value
+that is unpredictable.
+
+Illegal: RDREC-COPY (both are of different control section) it is the
+difference in the load addresses of the two control sections. This value
+depends on the way run-time storage is allocated; it is unlikely to be of
+any use.
+
+• How to enforce this restriction
+
+- When an expression involves external references, the assembler
+cannot
+determine whether or not the expression is
+legal.
+
+- The assembler evaluates all of the terms it can, combines these to form
+an
+initial expression value, and generates Modification
+records.
+
+- The loader checks the expression for errors and finishes the evaluation.• It is useful in a system with frequent program development and testing.
+
+• Programs are re-assembled nearly every time they are run; efficiency of the assembly process is an important consideration.
+
+
+
+Forward Reference in One-Pass Assemblers:
+
+In load-and-Go assemblers when a forward reference is encountered:
+
+• Omits the operand address if the symbol has not yet been defined
+
+• Enters this undefined symbol into SYMTAB and indicates that it is undefined
+
+• Adds the address of this operand address to a list of forward references associated with the SYMTAB entry
+
+• When the definition for the symbol is encountered, scans the reference list and inserts the address.
+
+• At the end of the program, reports the error if there are still SYMTAB entries indicated undefined symbols.• For Load-and-Go assembler
+
+o Search SYMTAB for the symbol named in the END statement and jumps to
+this location to begin execution if there is no error
+
+After Scanning line 40 of the program:
+
+40 2021 J` CLOOP  302012
+
+The status is that upto this point the symbol RREC is referred once at location 2013,
+ENDFIL at 201F and WRREC at location 201C. None of these symbols are defined. The
+figure shows that how the pending definitions along with their addresses are included in the
+symbol table.
+
+
+
+
+
+
+
+The status after scanning line 160, which has encountered the definition of RDREC and
+ENDFIL is as given below:
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/```
+# Algorithm for one pass assembler
+
+1. **Read the source program one instruction at a time.**
+2. **Translate each instruction into machine code.**
+3. **Store the machine code in memory.**
+4. **If the end of the source program is reached, the assembly process is complete.**
+
+**Example:**
+
+```
+Source program:
+
+MOV R1, #10
+ADD R2, R1, #20
+SUB R3, R2, R1
+
+Machine code:
+
+00000000 0000000A   MOV R1, #10
+00000004 00000014   ADD R2, R1, #20
+00000008 00000012   SUB R3, R2, R1
+``````
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kerala Notes</title>
+</head>
+<body>
+  <h1>Computer Science Engineering</h1>
+  <p>Downloaded from ktunotes.in</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac eros enim. Sed ac enim euismod, semper lectus non, scelerisque quam. Sed sed quam non lectus scelerisque semper. Sed scelerisque velit vitae lectus scelerisque, non scelerisque enim ullamcorper.
+  </p>
+</body>
+</html>
+```MultiPass Assembler:
+
+For a two pass assembler, in EQU assembler directive we required that any symbol on the
+right hand side be defined previously in the program. This is because of the two pass.If
+multipass is possible this restriction can be avoided. Eg:
+ALPHA     EQU    BETA
+BETA        EQU    DELTA
+
+DELTA      RESW  1
+
+
+Working of Multipass Assembler:
+
+A multipass assembler can make as many passes as needed to process the definition of symbols.
+For a forward reference in symbol definition, we store in the SYMTAB:
+o The symbol name
+o The defining expression
+o The number of undefined symbols in the defining expression
+
+The undefined symbol (marked with a flag *) associated with a list of symbols depend on
+this undefined symbol.
+When a symbol is defined, we can recursively evaluate the symbol expressions
+depending on the newly defined symbol.Multi - Pass Assembler Example Program
+
+Multi - Pass Assembler : Example for forward reference in Symbol Defining Statements:
+
+For More Study Materials : https://www.keralanotes.com/keralanotes.com 
+
+
+
+
+
+
+
+Implementation Example: MASM ASSEMBLER 
+
+• Microsoft MASM assembler works for Petium and other  ×86 systems. 
+• In this system memory is considered as segments. 
+• An MASM assembly language program is written as collection of  segments. Each segment is 
+defined as be longing to a particular class, corresponding to its contents. Commonly used classes are 
+CODE, DATA, CONST and STACK 
+• During program execution the segments are addressed via the ×86 segment registers.  Code 
+segments are addressed using register CS and stack segments are addressed using register SS. 
+These segment registers are automatically set by the system loader when a program is loaded for 
+execution. 
+• Register CS is set to indicate the segment that contains the starting label specified in the END 
+statement of the program. Register SS is to indicate the last stack segment processed by the loader. 
+•  Data segments (including constant segments) are normally addressed using DS, ES, or GS. 
+• By default the assembler assumes that all references to data segments use register DS. This assumption can be changed by the assembler directive ASSUME. 
+ASSUME ES: DATASEG2 
+• Registers DS, ES, FS and GS must be loaded by the program before they can be used to address 
+data.• The MOV instruction can be used to move data between registers, between memory and registers, and between two memory locations. 
+• The MOV instruction is one of the most versatile instructions in the x86 instruction set. 
+• The MOV instruction can be used to move data of any size, from 1 byte to 8 bytes. 
+• The MOV instruction can be used to move data between segments. For example, the following instructions would move the contents of the memory location at address 1000h into the AX register: 
+MOV AX, 1000h 
+MOV DS, AX 
+• The MOV instruction can also be used to move data between the stack and registers. For example, the following instructions would move the contents of the AX register onto the stack: 
+PUSH AX```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kerala Notes</title>
+</head>
+<body>
+  <h1>Kerala Notes</h1>
+  <p>For More Study Materials: <a href="https://www.keralanotes.com/">https://www.keralanotes.com/</a></p>
+  <p>Downloaded from <a href="https://ktunotes.in/">ktunotes.in</a></p>
+</body>
+</html>
+```

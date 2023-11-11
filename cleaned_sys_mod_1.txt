@@ -1,0 +1,696 @@
+SYLLABUS | STUDY MATERIALS | TEXTBOOK
+PDF | SOLVED QUESTION PAPERS
+www.keralanotes.com
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITY**System Software**
+
+**Module 1**
+
+**1.1 Introduction to System Software**
+
+System software is the software that manages computer hardware and software resources and provides common services for computer programs. It includes operating systems, device drivers, compilers, and other system utilities.
+
+**1.2 Operating Systems**
+
+An operating system (OS) is a software that manages computer hardware and software resources and provides common services for computer programs. It is the most important piece of software on a computer, and it is responsible for managing the computer's resources, including memory, storage, and processing power.
+
+**1.3 Device Drivers**
+
+A device driver is a software program that allows a computer to communicate with a specific hardware device. Device drivers are essential for the proper functioning of hardware devices, such as printers, scanners, and keyboards.
+
+**1.4 Compilers**
+
+A compiler is a software program that translates a high-level programming language into a low-level programming language. Compilers are used to convert source code into machine code, which can be executed by a computer's CPU.
+
+**1.5 Other System Utilities**
+
+Other system utilities include programs such as file managers, text editors, and debuggers. These programs are used to manage files, edit text, and debug programs.
+
+**1.6 Summary**
+
+System software is essential for the proper functioning of a computer. It manages computer hardware and software resources, provides common services for computer programs, and includes operating systems, device drivers, compilers, and other system utilities.S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ MODULE 1 
+
+SOFTWARE
+
+• Set of instructions given to the computer.
+• We cannot touch and feel it.
+• Developed by writing instructions in programming language.
+• Operations of computer are controlled via this.
+• If damaged or corrupted, back up copy can be installed again.
+• Eg:- Antivirus, Microsoft Office Tools.
+
+HARDWARE
+
+• Physical parts of a computer.
+• We can touch and feel it.
+• Constructed using physical components.
+• Operates under control of software.
+• If damaged, can be replaced.
+• Eg:- Keyboard, Monitor, Mouse
+
+SOFTWARE vs HARDWARE
+
+SOFTWARE   
+HARDWARE  
+1. Collection of instructions that tells 
+computer what to do  1. Physical elements of computer  
+2. Divided in to  
+a. System Software  
+b. Application Software  2. Categories  
+a. Input Devices.  
+b. Output Devices  
+For More Study Materials : https://www.keralanotes.com/2 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST
+c. Utility Software
+c. Storage Devices
+3. Should be installed in to computer
+3. Once software is loaded these can be
+used.
+4. Prone to viruses
+4. No virus attacks
+5. If damaged/ corrupted reinstallation
+is possible
+5. If damaged, can be replaced.
+Eg:- Microsoft Office, Adobe
+Eg:- Mouse, Monitor, Keyboard
+
+TYPES OF SOFTWARE
+1. System Software:
+ Contains collection of programs that support operation of computer.
+ Helps to run computer hardware and computer system.
+ Handles running of computer hardware.
+ These are of different types”
+a) Operating System
+b) Language Translators
+i. Compiler
+ii. Assembler
+iii. Interpreter
+iv. Macro Processor
+c) Loader
+d) Linker
+e) Debugger
+f) Text Editor
+
+2. Application Software:
+ It allows end users to accomplish one or more specific tasks.
+ Focus on application or problem to be solved.3 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+Operating System 
+
+* Acts as interface between user and system.  
+* Provide user friendly interface. 
+* Functions: 
+a) Process Management 
+b) Memory Management 
+c) Resource Management 
+d) I/O Operations 
+e) Data Management 
+f) Provide Security for job. 
+
+Language Translators 
+
+* Program that takes input program in one language and produces an output in another 
+language. 
+
+I. Compilers 
+
+* Translates program in high level language in to machine level language. 
+* Conversion or translation is taking place by taking program as whole. 
+* Bridges the semantic gap between language domain and execution domain.  
+* Perform syntax analysis, semantics analysis and intermediate code generation. 
+
+For More Study Materials : https://www.keralanotes.com/4 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST 
+
+II. Interpreters 
+
+* Translates statement of high level language in to machine level language by taking the 
+program line by line. 
+* Interpretation cycle includes: 
+    * Fetch the statement. 
+    * Analyze the statement and determine its meaning. 
+    * Execute the meaning of statement. 
+
+III. Assemblers 
+
+* Programmers found it difficult to read or write programs in machine language, so for 
+convenience they used mnemonic symbols for each instruction which is translated to 
+machine language. 
+* Assemblers translate assembly language to machine language. 
+* Translate mnemonic code to machine language equivalents. 
+* Assign machine address to symbol table. 
+
+
+Working: 
+
+* Find the required information to perform task. 
+* Analyze and design suitable data structures to hold and manipulate information. 
+* Find the process or steps needed to gather information and maintain it. 
+* Determine processing step required to execute each identified task. 
+
+For More Study Materials : https://www.keralanotes.com/5 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+
+COMPILER vs INTERPRETER vs ASSEMBLER 
+
+
+
+Linker 
+
+* Process of collecting and combining various pieces of code and data into single file that 
+can be loaded into memory and executed.  
+* Linking performed at compile time, when source code is translated to machine code, at 
+load time, when program is loaded into memory and executed by loader and at run time 
+by application programs. 
+
+Types: 
+
+a) Linking Loader: Performs all linking and relocation operations directly into main memory 
+for execution. 
+
+b) Linkage Editor: Produces a linked version of program called as load module or executable 
+image. This load module is written into file or library for later execution. 
+
+For More Study Materials : https://www.keralanotes.com/6 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ 
+c) Dynamic Linker: This linking postpones the linking function until execution time. Also 
+called as dynamic loading. 
+ 
+Loader 
+ Utility of an operating system. 
+ Copies program from a storage device to computer’s main memory.  
+ They can replace virtual address with real address. 
+ They are invisible to user. 
+ 
+Debugger 
+ An Interactive debugging system provides programmers with facilities that aid in testing 
+and debugging of programs.  
+ Debugging means locating bugs or faults in program. 
+ Helps in fixing error. 
+ Determination of exact nature and location of error in the program. 
+ 
+Device Driver 
+ It is a software module which manages the communication and control of specific I/O 
+device on type of device. 
+ Convert logical requests from the user in to specific commands directed to device itself. 
+ 
+Macro Processor 
+ Macro is the unit of specification of program generation through expansion. 
+ Macros are special code fragments that are defined once in the program and used by 
+calling them from various places within the program. 
+ Macro processor is a program that copies stream of text from one place to another, 
+making a systematic set of replacements as it does so. 
+ They are often embedded in other programs such as assemblers and compilers.8 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+  It has basic addressing, storing most memory addresses in hexadecimal integer format. 
+ Its machine architecture includes 
+1. Memory: There are 215 bytes in the computer memory that is 32768 bytes. 
+  
+2. Register: 
+ Used as storage locations that perform some functions. 
+  There are 5 registers each of them is of 24 bits length. 
+ 
+3. Data Formats:  
+ It supports only the Integer and Character data formats.**SIC-XE Assembler**
+
+1. **Features**
+
+* **Two address instruction format**
+* **Two index registers X and Y**
+* **Conditional branching instructions**
+* **Subroutine linkage instructions**
+* **Direct and indexed addressing modes**
+
+2. **Registers**
+
+* **General purpose registers A, B, C, D**
+* **Index registers X and Y**
+* **Program counter PC**
+* **Stack pointer SP**
+* **Condition code register CCR**
+
+3. **Data representation**
+
+* **There is no hardware support for floating point numbers.**
+* **Integers stored as 24 bit binary numbers.**
+* **Negative values represented as 2’s complement.**
+* **Character data stored as 8 bit ASCII codes.**
+
+4. **Instruction Formats**
+
+* **All machine instructions in the standard version of SIC have the following**
+**24 bit format:**
+
+```
+OP CODE    X     Y    Address
+0000 0000 dddd dddd
+```
+
+* **Flag bit x is used to indicate the indexed addressing mode.**
+
+5. **Addressing mode**
+
+* **2 Types**
+
+    * **Direct Addressing Mode:** Here flag bit x=0
+    * **Target Address= Actual Address**
+
+    * **Indexed Addressing Mode:** Here flag bit x=1
+    * **Target Address= Actual Address+Index Register (X) contents**
+    * **i.e. Target Address= Address+(X)**
+
+6. **Instruction Set**
+
+* **a. Data Transfer Instruction:** Include instructions that load and store register.
+* **Eg: LDA, STA, LDX, STX**
+
+* **b. Arithmetic Operation Instruction:** Arithmetic operations can be done which
+* **involves register A**
+* **Eg: ADD, SUB, MUL, DIV, COMPR**
+
+* **c. Conditional Branching Instruction:** The conditional jump instruction test the
+* **setting of condition code and jumps.**
+* **Eg: JLT, JEQ, JGT**
+
+* **d. Subroutine Call Instruction:** Two instructions are provided to perform
+* **subroutine linkage**
+
+    * **JSUB:** To jump
+
+    * **RSUB:** To return**SIC/XE Architecture**
+
+1. **Instruction Set**
+
+* 16-bit instruction format
+* 2-part op-code
+* 4 addressing modes
+* Conditional branch instructions
+* 5 types of instructions:
+    * Data transfer
+    * Arithmetic
+    * Logical
+    * Program control
+    * Input/Output
+
+2. **Memory**
+
+* 16-bit memory address
+* Maximum memory size of 64K bytes
+* 16-bit words stored in memory
+* Memory mapped I/O
+
+3. **Registers**
+
+* 4 general-purpose registers: A, X, L, and S
+* 1 accumulator register (A)
+* 1 program counter (PC)
+* 1 instruction register (IR)
+* 1 condition code register (CC)
+
+4. **Arithmetic and Logical Operations**
+
+* Arithmetic operations: addition, subtraction, multiplication, and division
+* Logical operations: AND, OR, XOR, and NOT
+
+5. **Program Control Instructions**
+
+* Conditional branch instructions:
+    * BEQ: Branch if equal
+    * BNE: Branch if not equal
+    * BLT: Branch if less than
+    * BGT: Branch if greater than
+* Unconditional branch instructions:
+    * BRA: Branch always
+    * RET: Return from subroutine
+
+6. **Input and Output Instructions**
+
+* I/O operations are executed by transferring a single byte each time.
+* Target port is specified by last 8 bits of register A.
+* Each device is assigned a unique 8 bit code to send and receive data and
+control signals.
+
+7. **Input and Output**
+
+* Performed by transferring 1 byte at a time to or from right most 8 bits of
+register A (Accumulator).
+* Test Device (TD) instruction tests whether the addressed device is ready to
+send and receive a byte of data.
+* Read Data (RD) and Write Data (WD) is used for reading and writing of
+data.
+
+8. **Data Movement and Storage Definitions**
+
+* LDA, STA, LDX, STX all uses 3 byte word.
+* LDCH, STCH are associated with characters which uses 1 byte.
+* Storage definitions are:
+    * WORD - ONE WORD CONSTANT
+    * RESW- ONE WORD VARIABLE
+    * BYTE- ONE BYTE CONSTANT
+    * RESB- ONE BYTE VARIABLE
+
+**SIC/XE ARCHITECTURE- SIC WITH EXTRA EQUIPMENT**
+
+* Architecture is similar to standard model with certain additional components and
+features.
+
+1. Memory: Maximum memory available on a SIC/XE system is 1MB (220 bytes)
+
+2. Registers: Additional B, S, T and F registers are provided by SIC/XE, in addition to
+the registers of SIC.3. Floating point Data type: There is a 48 bit floating point data type, F*2(e-1024)
+
+4. Instruction format: New set of instruction formats for SIC/XE are as follows:
+a. Format 1 (1 Byte): Contains only operation code
+
+Eg: RSUB ( Return to Subroutine)
+b. Format 2 (2 Bytes): First 8 bits for operation code, next four for register 1 and
+following for register 2.
+
+Eg: COMPR A, S ( Compare contents of register A and S)
+c. Format 3 (3 Bytes) : Here e=0
+
+ First 6 bits contain operation code.
+
+ Next 6 bits contain flags.
+
+ Last 12 bits contain displacement for the address of the operand.S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+Instruction format: 
+a. Format 1 (1 byte): 
+First 4 bits are opcode and remaining 4 bits are operand 
+b. Format 2 (2 bytes): 
+First 6 bits are opcode and remaining 6 bits are operand 
+c. Format 3 (3 bytes): 
+First 6 bits are opcode and remaining 12 bits are target address 
+ 
+d. Format 4 (4 bytes): Here e=1 
+ It is same as format 3 with an extra 2 hex digits for address that require 
+more than 12 bits to be represented. 
+ 
+5. Addressing mode and Flag bits: 
+a. Direct ( x,b and p All set to 0): 
+ 
+TA=Location of operand 
+b. Indirect ( x=1,b=0,p=0): 
+ 
+TA=location of word containing address of operand 
+c. Indexed Indirect (x=0,b=1,p=0): 
+ 
+TA=location of word containing address of word containing address of operand 
+d. Indexed (x=1,b=1,p=0): 
+ 
+TA=location of word containing address of word containing address of operand 
+plus offset 
+e. Indexed with pre-decrement (x=1,b=1,p=1): 
+ 
+TA=location of word containing address of word containing address of operand 
+minus offset 
+f. Indexed with post-increment (x=1,b=1,p=1): 
+ 
+TA=location of word containing address of word containing address of operand 
+plus offset +16. Instruction set:
+i. Instructions that load and store new register ‘B’:
+
+• LDB: Load B register with data from memory location given in address part of instruction.
+• STB: Store data in B register to memory location given in address part of instruction.
+
+ii. Instructions that perform arithmetic operations:
+
+• ADD: Add contents of memory location given in address part to contents of B register and store result in B register.
+• SUB: Subtract contents of memory location given in address part from contents of B register and store result in B register.
+• MUL: Multiply contents of memory location given in address part with contents of B register and store result in B register.
+• DIV: Divide contents of memory location given in address part by contents of B register and store result in B register.
+
+iii. Instructions that perform logical operations:
+
+• AND: Performs logical AND operation on contents of memory location given in address part and contents of B register and store result in B register.
+• OR: Performs logical OR operation on contents of memory location given in address part and contents of B register and store result in B register.
+• NOT: Performs logical NOT operation on contents of B register and store result in B register.
+
+iv. Instructions that control program flow:
+
+• JUMP: Transfers control to instruction at location given in address part of instruction.
+• JZ: Transfers control to instruction at location given in address part if contents of B register is zero.
+• JNZ: Transfers control to instruction at location given in address part if contents of B register is not zero.S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST 
+
+1. SIC/XE Instructions:
+
+i. Instructions those perform Arithmetic operation on Memory
+a. LDB- Load the register ‘B’ with some value.
+Eg: LDBx- Load value of x in to register B.
+b. STB- Store the register ‘B’ content in to some variable.
+Eg: STBx- Store register ‘B’ content in to variable x.
+ii. Instructions those perform floating point Arithmetic operation
+a. ADDF
+b. SUBF
+c. MULF
+d. DIVF
+Here F is the floating point register
+Eg: ADDF, here register ‘B’ contents are added with Accumulator content
+and result is left with accumulator.
+iii. Instruction that take operand from Register
+RMO-Register move
+Eg: RMO S,B Reg ister ‘S’ content is moved to ‘B’ register.
+iv. Instruction which perform register arithmetic operation
+a. ADDR
+b. SUBR
+c. MULTR
+d. DIVR
+Eg: ADDR S,B
+add value of register B with register Sand store result in register B.
+
+7. Input and Output:
+
+The SIC/XE supports all the I/O instructions in the standard version.
+There are special I/O channels which are utilized for data transfer when CPU
+is involved in another process at same time.
+Channels control associated I/O channels.
+There can be maximum of 16 I/O channels each supporting maximum of 16
+devices.16 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ Data movement instructions are used to transfer data from one location to another location in memory. 
+1. Move instruction 
+MOVE M,R1 
+R1 contains the address of the data. M contains the data. 
+2. Load instruction 
+LDB 5,R1 
+R1 contains the address of the data. 5 contains the data. 
+3. Store instruction 
+STB R1,5 
+R1 contains the address of the data. 5 contains the data. 
+4. Transfer instruction 
+LDA 5,R1 
+R1 contains the address of the data. 5 contains the address of the data. 
+5. Exchange instruction 
+XCH R1,R2 
+R1 and R2 contains the address of the data. 
+ 
+ 
+2. Data Movement in SIC/XE 
+Data movement instructions are used to transfer data from one location to another location in memory. 
+1. Move instruction 
+MOVE R1,R2 
+R1 contains the contents of R2. 
+2. Load instruction 
+LD R1,5 
+R1 contains the contents of address 5. 
+3. Store instruction 
+ST 5,R1 
+Address 5 contains the contents of R1. 
+4. Transfer instruction 
+T R1,R2 
+R1 and R2 contains the same contents. 
+5. Exchange instruction 
+X R1,R2 
+R1 and R2 contains the opposite contents. 
+ 
+ 
+3. Comparison of SIC and SIC/XE 
+S.No 
+Feature 
+SIC 
+SIC/XE 
+1. 
+Memory locations 
+16 bit 
+16 bit 
+2. 
+Instruction format 
+2 bytes 
+3 bytes 
+3. 
+Instruction set 
+24 
+36 
+4. 
+Data transfer 
+Move, Load, Store, Transfer, Exchange 
+Move, Load, Store, Transfer, Exchange 
+5. 
+Addressing modes 
+Direct, Indirect, Immediate, Register to register 
+Direct, Indirect, Immediate, Register to register, Base register to register, Index register to register 
+6. 
+Addressing limitations 
+15 bit 
+16 bit 
+7. 
+Number of registers 
+4 
+62. Data Movement in SIC/XE 
+ Here immediate addressing scheme is used. 
+
+Format: 
+
+MOV DEST, SRC 
+
+Where: 
+
+DEST is the destination register 
+
+SRC is the source register 
+
+Example: 
+
+MOV A, 10 
+
+This instruction means move the value 10 to the register A. 
+
+MOV C, B 
+
+This instruction means move the value in register B to register C.17 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ 
+ 
+Addition (A) 
+Instruction format : A ADD, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: ADD, #100 
+adds the value 100 to the accumulator 
+ 
+Subtraction (S) 
+Instruction format : S SUB, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: S SUB, #100 
+subtracts the value 100 from the accumulator 
+ 
+Multiplication (M) 
+Instruction format : M MUL, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: M MUL, #100 
+multiplies the value 100 to the accumulator 
+ 
+Division (D) 
+Instruction format : D DIV, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: D DIV, #100 
+divides the accumulator by the value 100 
+ 
+2. In SIC/XE 
+Addition (A) 
+Instruction format : A ADD #value 
+where A is the accumulator, and value is the immediate value 
+Example: A ADD #100 
+adds the value 100 to the accumulator 
+ 
+Subtraction (S) 
+Instruction format : S SUB #value 
+where A is the accumulator, and value is the immediate value 
+Example: S SUB #100 
+subtracts the value 100 from the accumulator 
+ 
+Multiplication (M) 
+Instruction format : M MUL #value 
+where A is the accumulator, and value is the immediate value 
+Example: M MUL #100 
+multiplies the value 100 to the accumulator 
+ 
+Division (D) 
+Instruction format : D DIV #value 
+where A is the accumulator, and value is the immediate value 
+Example: D DIV #100 
+divides the accumulator by the value 10018
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST
+
+2. In SIC/XE
+constant
+
+For More Study Materials: https://www.keralanotes.com/1. INPUT OPERATIONS 
+(i) INPUT Statement 
+The INPUT statement is used to read data from the terminal and store it in a variable. The general format of the INPUT statement is: 
+
+INPUT variable-list 
+
+where variable-list is a list of variables separated by commas. 
+
+For example, the following statement reads the values of the variables A, B, and C from the terminal and stores them in the corresponding variables: 
+
+INPUT A, B, C 
+
+(ii) FORMAT STATEMENT 
+The FORMAT statement is used to specify the format of the data to be read. The general format of the FORMAT statement is: 
+
+FORMAT (format-specification) 
+
+where format-specification is a list of format characters. The format characters specify the type of data to be read and the number of digits to be read. 
+
+For example, the following FORMAT statement specifies that the data to be read is in the form of three integers separated by spaces: 
+
+FORMAT (3I5) 
+
+(iii) EXECUTION 
+When the INPUT statement is executed, the computer reads the data from the terminal and stores it in the variables specified in the variable-list. The data is read until a carriage return is entered. 
+
+For example, the following program reads three integers from the terminal and prints their sum: 
+
+START 
+A, B, C 
+INPUT A, B, C 
+S = A + B + C 
+PRINT S 
+STOP 
+
+2. OUTPUT OPERATIONS 
+(i) PRINT Statement 
+The PRINT statement is used to print data on the terminal. The general format of the PRINT statement is: 
+
+PRINT expression-list 
+
+where expression-list is a list of expressions separated by commas. 
+
+For example, the following statement prints the values of the variables A, B, and C on the terminal: 
+
+PRINT A, B, C 
+
+(ii) FORMAT STATEMENT 
+The FORMAT statement is used to specify the format of the data to be printed. The general format of the FORMAT statement is: 
+
+FORMAT (format-specification) 
+
+where format-specification is a list of format characters. The format characters specify the type of data to be printed and the number of digits to be printed. 
+
+For example, the following FORMAT statement specifies that the data to be printed is in the form of three integers separated by spaces: 
+
+FORMAT (3I5) 
+
+(iii) EXECUTION 
+When the PRINT statement is executed, the computer prints the data specified in the expression-list. The data is printed according to the format specified in the FORMAT statement.20
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST
+
+
+
+2. In SIC/XE
+
+For More Study Materials: https://www.keralanotes.com/21 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST 
+For More Study Materials : https://www.keralanotes.com/

@@ -1,0 +1,553 @@
+SYLLABUS | STUDY MATERIALS | TEXTBOOK
+PDF | SOLVED QUESTION PAPERS
+www.keralanotes.com
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITYwww.keralanotes.com SYSTEM SOFTWARE
+
+KTU S5 STUDY MATERIALS
+KTU S5 NOTES
+KTU S5 SYLLABUS
+KTU S5 PREVIOUS YEAR  
+SOLVED QUESTION PAPER
+KTU S5 TEXTBOOK PDF
+Module 4
+
+RELATED LINK : KTU STUDY MATERIALS
+CST 305keralanotes.com MODULE - 4
+
+LOADERS AND LINKERS
+
+Introduction
+
+The Source Program written in assembly language or high level language will be
+converted to object program, which is in the machine language form for execution. This
+conversion either from assembler or from compiler, contains translated instructions and data
+values from the source program, or specifies addresses in primary memory where these items
+are to be loaded for execution.
+This contains the following three processes, and they are,
+
+• Loading - which allocates memory location and brings the object program into
+memory for execution - (Loader)
+• Linking - which combines two or more separate object programs and supplies the
+information needed to allow references between them - (Linker)
+• Relocation - which modifies the object program so that it can be loaded at an address
+different from the location originally specified - (Relocating Loader)
+4. 1 Basic Loader Functions:
+
+• A loader is a system software that performs the loading function. It brings object program
+into memory and starts its execution. The role of loader is as shown in the figure.
+
+
+
+
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/Type of Loaders
+
+The different types of loaders are, absolute loader, bootstrap loader, relocating loader (relative loader), and, linking loader. The following sections discuss the functions and design of all these types of loaders.
+
+4.1.1 Design of Absolute Loader:
+
+• The operation of absolute loader is very simple. The object code is loaded to specified locations in the memory. At the end the loader jumps to the specified address to begin execution of the loaded program. Linking and relocation is not done.
+
+• The algorithm for this type of loader is given here.
+
+Begin
+
+read Header record
+
+verify program name and length
+
+read first Text record
+
+while record type is != ‘E’ do
+begin
+{if object code is in character form, convert into internal representation}
+move object code to specified location in memory
+read next object program record
+
+end
+
+jump to address specified in End record
+
+end
+
+Algorithm for Absolute loaderAlgorithm for SIC/XE relocation loader ```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i, j, k, n, start_addr, end_addr, length, offset, pc, base, sym_addr, sym_value;
+    char sym_name[100], reloc_type;
+    FILE *fp1, *fp2;
+
+    // Open input file
+    fp1 = fopen("input.txt", "r");
+    if (fp1 == NULL)
+    {
+        printf("Error opening input file\n");
+        exit(0);
+    }
+
+    // Open output file
+    fp2 = fopen("output.txt", "w");
+    if (fp2 == NULL)
+    {
+        printf("Error opening output file\n");
+        exit(0);
+    }
+
+    // Read the number of relocation entries
+    fscanf(fp1, "%d\n", &n);
+
+    // Read the relocation entries
+    for (i = 0; i < n; i++)
+    {
+        // Read the symbol name
+        fscanf(fp1, "%s\t", sym_name);
+
+        // Read the relocation type
+        fscanf(fp1, "%c\t", &reloc_type);
+
+        // Read the start address
+        fscanf(fp1, "%d\t", &start_addr);
+
+        // Read the end address
+        fscanf(fp1, "%d\n", &end_addr);
+
+        // Calculate the length of the relocation entry
+        length = end_addr - start_addr + 1;
+
+        // Calculate the offset of the relocation entry
+        offset = start_addr - 1;
+
+        // Calculate the base address
+        base = start_addr;
+
+        // Calculate the symbol address
+        sym_addr = 0;
+
+        // Calculate the symbol value
+        sym_value = 0;
+
+        // Write the relocation entry to the output file
+        fprintf(fp2, "%s\t%c\t%d\t%d\t%d\t%d\t%d\n", sym_name, reloc_type, start_addr, end_addr, length, offset, base);
+    }
+
+    // Close the input file
+    fclose(fp1);
+
+    // Close the output file
+    fclose(fp2);
+
+    return 0;
+}
+```Bitmasking
+
+• In SIC program relative addressing is not used. So every instruction needs modification. We cannot
+write modification records for all instructions.
+• So relocation bits are used. Each instruction object code is associated with relocation bit.
+• Relocation bits for each text record is written together into bitmask after the length using 3
+hexadecimal digits. (12 bits)
+
+• Example:
+
+```
+FFC= 111111111100
+```
+
+SIC relocation loader algorithm
+
+```
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/
+```4.2.2 Program Linking
+
+• Consider the program of control sections. The program is made up of 3 control sections.
+
+1. Main program
+
+2. Read subroutine
+
+3. Write subroutine
+
+• These control sections could be assembled together or they could be assembled independently
+as separate segments of object code after assembly.
+
+• The programmer thinks the three control sections together as a single program. But loader
+considers this as separate control sections which are to be linked, relocated and loaded.
+
+• Consider the three separate programs PROGA,PROGB,PROGC. In this example, there are
+differences in handling the identical expressions within the 3 programs.
+
+• Consider the references and the corresponding modification records.
+
+• The general approach is assembler evaluate as much as of the expression it can. The remaining
+terms are passed on to the loader through modification records.
+
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/• Each program contains a list of items (LISTA, LISTB, LISTC). The ends of these lists are marked
+by ENDA, ENDB, ENDC. Each program contains the same set of references to these external symbols. Three of these are instruction operands (REF1, REF2, REF3). and the others are the values
+of data words. (REF4 through REF8).
+• Consider first reference marked REF1. For PROGA REF1 is simply a reference to a label within the
+program. It is assembled in the usual way as PC relative instruction. In PROGB the same operand
+refers to an external symbol. The assembler uses an extended format instruction with address field set to 00000. Object program for PROGB contains a modification record instructing the loader to
+add the value of the symbol LISTA to this address field when the program is linked. This reference is handled exactly in the same way for PROGC.```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kerala Notes</title>
+</head>
+<body>
+  <h1>Kerala Notes</h1>
+  <p>This website contains a collection of study materials for students in Kerala.</p>
+  <p>The materials are available in PDF format and can be downloaded for free.</p>
+  <p>To download a file, click on the link below the file name.</p>
+  <p>You can also search for files by subject or category.</p>
+  <p>We hope you find this website helpful.</p>
+</body>
+</html>
+```• keralanotes.com 
+
+• The figure below shows how the three programs are loaded into memory. 
+
+For More Study Materials : https://www.keralanotes.com/**4.2.2 Linking loader**
+
+A linking loader is a program that combines several object modules into a single executable program. The linking loader also resolves any external references between the object modules.
+
+**Example:** Consider the following object modules:
+
+* `PROGA.OBJ`: This object module contains the following code:
+
+```
+MOV R1, #10
+MOV R2, #20
+ADD R3, R1, R2
+```
+
+* `PROGB.OBJ`: This object module contains the following code:
+
+```
+MOV R4, #30
+MOV R5, #40
+ADD R6, R4, R5
+```
+
+* `PROGC.OBJ`: This object module contains the following code:
+
+```
+MOV R7, #50
+MOV R8, #60
+ADD R9, R7, R8
+```
+
+The linking loader will combine these three object modules into a single executable program. The executable program will contain the following code:
+
+```
+MOV R1, #10
+MOV R2, #20
+ADD R3, R1, R2
+MOV R4, #30
+MOV R5, #40
+ADD R6, R4, R5
+MOV R7, #50
+MOV R8, #60
+ADD R9, R7, R8
+```
+
+The linking loader will also resolve any external references between the object modules. For example, the object module `PROGC.OBJ` references the symbol `R3`. The linking loader will find the definition of the symbol `R3` in the object module `PROGA.OBJ` and replace the reference with the address of `R3` in `PROGA.OBJ`.
+
+**4.2.3 Algorithm and data structures for a linking loader**
+
+A linking loader typically uses the following algorithm:
+
+1. The linking loader reads the object modules into memory.
+2. The linking loader creates a symbol table that maps each symbol to its address.
+3. The linking loader resolves any external references between the object modules.
+4. The linking loader creates a relocation table that maps each address in the object modules to its new address in the linked program.
+5. The linking loader loads the linked program into memory.
+6. The linking loader executes the linked program.
+
+The main data structures used by a linking loader are the symbol table and the relocation table. The symbol table maps each symbol to its address. The relocation table maps each address in the object modules to its new address in the linked program.
+
+**Example:** Consider the following object modules:
+
+* `PROGA.OBJ`: This object module contains the following code:
+
+```
+MOV R1, #10
+MOV R2, #20
+ADD R3, R1, R2
+```
+
+* `PROGB.OBJ`: This object module contains the following code:
+
+```
+MOV R4, #30
+MOV R5, #40
+ADD R6, R4, R5
+```
+
+* `PROGC.OBJ`: This object module contains the following code:
+
+```
+MOV R7, #50
+MOV R8, #60
+ADD R9, R7, R8
+```
+
+The symbol table for these object modules would look like this:
+
+| Symbol | Address |
+|---|---|
+| R1 | 0x1000 |
+| R2 | 0x1004 |
+| R3 | 0x1008 |
+| R4 | 0x1010 |
+| R5 | 0x1014 |
+| R6 | 0x1018 |
+| R7 | 0x1020 |
+| R8 | 0x1024 |
+| R9 | 0x1028 |
+
+The relocation table for these object modules would look like this:
+
+| Address | New Address |
+|---|---|
+| 0x1008 | 0x1030 |
+| 0x1018 | 0x1040 |
+| 0x1028 | 0x1050 |
+
+The linking loader would then load the linked program into memory at address 0x1000. The relocation table would be used to update the addresses in the linked program so that they refer to the correct locations in memory. The linked program would then be executed.**Pass1**
+
+* During the first pass, the loader is concerned only with Header and Define record types in the
+control sections.
+* The beginning load address for the linked program (PROGADDR) is obtained from OS. This
+becomes the starting address for the first control section (CSADDR).
+* The control section name is entered into ESTAB with value given by CSADDR.
+* All external symbols appearing in the define record for the control section are also entered into
+ESTAB. Their addresses are obtained by adding the value specified in the Define record to CSADDR.
+* When the END record is read, the control section length CSLTH which was saved from the Header
+record is added to CSADDR. This gives the starting address for the next control section.
+
+* At the end of pass1, ESTAB contains all external symbols defined in the control sections together
+with addresses assigned to each.
+* Many loaders include the ability to print a load map that shows these symbols and their addresses.
+
+**Output of pass1**
+
+```
+CSADDR   SYMBOL    VALUE
+---------- -------- --------
+A         start      0
+B         B         10
+C         C         20
+```Algorithm for pass1 of a linking loader
+
+Pass2
+
+- Performs the actual loading, relocation and linking of the program.
+- CSADDR holds the starting address of the control section currently being loaded.
+- As each Text record is read, the object code is moved to the specified address (plus the current value of the CSADDR).
+- When a modification record is encountered, the symbol whose value is to be used for modification is looked up in ESTAB. This value is then added to or subtracted from the indicated location in memory.
+- The last step performed by the loader is transferring of control to the loaded program to begin execution.Pass2 Algorithm
+
+The algorithm can be made more efficient if a slight change is made in the object program format. That is, assigning a reference number to each external symbol referred to in a control section. This reference number is used in modification records.
+
+4.3 Machine Independent loader features
+
+4.3.1 Automatic Library search
+
+This feature allows a programmer to use standard subroutines without explicitly including them in the program.**Loader**
+
+A loader is a program that loads an executable program into memory and prepares it for execution. The loader reads the program from a storage device, such as a disk or tape, and loads it into memory. The loader also resolves any external references in the program, such as references to other programs or libraries.
+
+**Types of Loaders**
+
+There are two main types of loaders: static and dynamic.
+
+* **Static loaders** load the entire program into memory at once. This is the simplest type of loader, but it can be inefficient for large programs.
+* **Dynamic loaders** load the program into memory one module at a time. This is more efficient for large programs, but it can be more complex to implement.
+
+**Loader Options**
+
+Many loaders allow the user to specify options that modify their behavior. Some common loader options include:
+
+* **Specifying the location in memory where the program should be loaded**
+* **Specifying the libraries that the program should use**
+* **Specifying the order in which the modules in the program should be loaded**
+
+**Loaders and Operating Systems**
+
+The loader is an important part of the operating system. The operating system typically provides a set of loader functions that can be used by application programs. These functions allow the application program to load itself into memory and prepare itself for execution.
+
+**Example**
+
+The following is an example of a loader program in C:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    // Get the name of the program to load.
+    char *program_name = argv[1];
+
+    // Open the program file.
+    FILE *program_file = fopen(program_name, "rb");
+    if (program_file == NULL) {
+        printf("Error opening program file: %s\n", program_name);
+        return 1;
+    }
+
+    // Get the size of the program.
+    fseek(program_file, 0, SEEK_END);
+    int program_size = ftell(program_file);
+
+    // Allocate memory for the program.
+    char *program_buffer = malloc(program_size);
+
+    // Read the program into memory.
+    rewind(program_file);
+    fread(program_buffer, program_size, 1, program_file);
+
+    // Close the program file.
+    fclose(program_file);
+
+    // Get the entry point of the program.
+    int entry_point = *(int *)program_buffer;
+
+    // Jump to the entry point of the program.
+    ((void (*)())entry_point)();
+
+    return 0;
+}
+```
+
+This loader program loads the program specified by the user into memory and jumps to the entry point of the program.**Computer Science Engineering**
+
+**Downloaded from ktunotes.in**
+
+**4.3 Loader**
+
+A loader is a program that loads a program into memory and prepares it for execution. It performs the following tasks:
+
+1. **Loading:** The loader loads the program from a storage device (such as a disk) into memory.
+2. **Relocation:** The loader relocates the program so that it can be executed at a different address than where it was loaded.
+3. **Linking:** The loader links the program with the libraries that it needs to run.
+
+The loader can be either a **static loader** or a **dynamic loader**. A static loader links the program with the libraries at compile time. A dynamic loader links the program with the libraries at run time.
+
+**4.3.1 Static Loader**
+
+A static loader links the program with the libraries at compile time. This means that the program is linked with the exact libraries that were used when it was compiled. This can be a problem if the libraries are not available on the system where the program is being executed.
+
+**4.3.2 Dynamic Loader**
+
+A dynamic loader links the program with the libraries at run time. This means that the program can be executed on any system that has the necessary libraries. The dynamic loader searches for the libraries on the system and loads them into memory as needed.
+
+**4.3.3 Loader Options**
+
+The loader can be invoked with a number of options. These options can be used to control the way that the loader loads the program. Some of the most common options are:
+
+* **-o:** This option specifies the output file for the loader. The output file is a load module that can be executed by the operating system.
+* **-l:** This option specifies the libraries that the loader should link with the program.
+* **-L:** This option specifies the directories that the loader should search for libraries.
+* **-v:** This option prints out verbose information about the loader's operations.
+
+**4.4 Loader Design**
+
+A loader is a complex program that must be carefully designed and implemented. The loader must be able to handle a variety of different types of programs and libraries. It must also be efficient and reliable.
+
+The loader design process typically involves the following steps:
+
+1. **Analysis:** The first step is to analyze the requirements of the loader. This includes identifying the types of programs and libraries that the loader will need to support.
+2. **Design:** The next step is to design the loader. This involves developing a high-level design of the loader's architecture and algorithms.
+3. **Implementation:** The third step is to implement the loader. This involves writing the code for the loader's modules.
+4. **Testing:** The fourth step is to test the loader. This involves testing the loader with a variety of different programs and libraries.
+
+**4.4.1 Differences between Linkage editor and linking loader**
+
+The linkage editor and the linking loader are both responsible for loading and linking programs. However, there are some key differences between the two.
+
+* **The linkage editor produces a linked version of the program called a load module.** The load module is written to a file and can be executed later. The linking loader loads the program directly into memory and prepares it for execution.
+* **The linkage editor only performs linking once.** The linking loader performs linking every time the program is executed.
+* **The linkage editor does not perform relocation.** The linking loader performs relocation so that the program can be executed at a different address than where it was loaded.
+
+**4.4.2 Conclusion**
+
+Loaders are an essential part of the software development process. They are responsible for loading and linking programs so that they can be executed. The loader design process is complex and involves a number of steps. However, a well-designed loader can be an efficient and reliable part of the software development process.**Advantages of Linkage editors**
+
+* Linkage editors can perform many useful functions besides simply preparing an object program for execution.
+* Linkage editors can be used to replace a subroutine in the linked version of a program.
+* Linkage editors can be used to build packages of subroutines or other control sections that are generally used together.
+
+**For More Study Materials:**
+
+* https://www.keralanotes.com/
+* https://www.keralanotes.com/**Dynamic Linking**
+
+In dynamic linking, the linking function is done at execution time. That is, a subroutine is loaded and linked to the rest of the program when it is first called.
+
+Dynamic linking is often used to allow several executing programs to share one copy of a subroutine or library. For example, in C, such functions are stored in dynamic linking libraries. A single copy of the routines in this library could be loaded into memory and all programs share this.
+
+In object-oriented programs, dynamic linking is often used for references to software objects.
+
+Advantage: Dynamic linking provides the ability to load the routines only when they are required. For example, consider the subroutine which diagnoses the error in input data during execution. If such errors are rare, these subroutines need not be used.
+
+Consider the following example of dynamic linking. Here, the routines that are to be dynamically loaded must be called via an OS service request.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n, i, j;
+    int *a, *b;
+
+    // Get the size of the array
+    scanf(" %d ", &n);
+
+    // Allocate memory for the arrays
+    a = (int *)malloc(n * sizeof(int));
+    b = (int *)malloc(n * sizeof(int));
+
+    // Read the elements of the arrays
+    for (i = 0; i < n; i++)
+    {
+        scanf(" %d ", &a[i]);
+    }
+
+    // Dynamically load the library
+    void (*mult)(int *, int *, int) = (void (*)(int *, int *, int))
+                                        dlopen("libmult.so", RTLD_LAZY);
+
+    // Call the library function
+    mult(a, b, n);
+
+    // Print the elements of the second array
+    for (i = 0; i < n; i++)
+    {
+        printf(" %d ", b[i]);
+    }
+
+    // Free the memory allocated for the arrays
+    free(a);
+    free(b);
+
+    return 0;
+}
+```Loading and calling a subroutine via dynamic linking
+
+When the dynamic linking is used, the association of an actual address with the symbolic name of the called routine is done at execution time. This is known as dynamic binding.4.3.3 Bootstrap loaders
+
+• Consider how the loader itself is loaded into memory. OS loads the loader. How the OS gets loaded.
+• In an idle system if we specify the absolute address the program can be loaded at that location. that is a
+mechanism of absolute loader is required.
+• One solution to this is to have a built in hardware function that reads a fixed length record from some
+device into memory at some fixed location. This device can be selected via console switches. After the
+read operation is complete the control is automatically transferred to the address in memory where the record was stored. This record contains machine instructions that load the absolute program that follows.
+• If the loading process requires more instructions than can be read in a single rec ord this first record
+causes the reading of others and in turn other records. Hence the name Bootstrap.
