@@ -1,0 +1,763 @@
+SYLLABUS | STUDY MATERIALS | TEXTBOOK
+PDF | SOLVED QUESTION PAPERS
+www.keralanotes.com
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITYModule 3 
+
+
+
+
+1.   Introduction to Computer Networks
+
+1.1 What is a computer network?
+    1.1.1 Definition of a computer network
+    1.1.2 Examples of computer networks
+    1.1.3 Topology of computer networks
+    1.1.4 Classification of computer networks
+1.2 Components of a computer network
+    1.2.1 Network hardware
+    1.2.2 Network software
+1.3 Network standards
+    1.3.1 OSI Reference Model
+    1.3.2 TCP/IP Protocol Suite
+    1.3.3 IEEE 802.3 Standard
+1.4 Network topologies
+    1.4.1 Bus topology
+    1.4.2 Star topology
+    1.4.3 Ring topology
+    1.4.4 Mesh topology
+    1.4.5 Hybrid topology
+1.5 Network protocols
+    1.5.1 Network layer protocols
+    1.5.2 Transport layer protocols
+    1.5.3 Application layer protocols
+1.6 Network performance
+    1.6.1 Bandwidth
+    1.6.2 Latency
+    1.6.3 Jitter
+    1.6.4 Packet loss
+1.7 Network security
+    1.7.1 Authentication
+    1.7.2 Authorization
+    1.7.3 Confidentiality
+    1.7.4 Integrity
+    1.7.5 Availability
+
+
+
+2.   Data Communication and Transmission
+
+2.1 Data representation
+    2.1.1 Bit
+    2.1.2 Byte
+    2.1.3 Nibble
+    2.1.4 Word
+2.2 Data transmission
+    2.2.1 Analog transmission
+    2.2.2 Digital transmission
+    2.2.3 Baseband transmission
+    2.2.4 Broadband transmission
+2.3 Transmission media
+    2.3.1 Twisted-pair cable
+    2.3.2 Coaxial cable
+    2.3.3 Fiber optic cable
+    2.3.4 Wireless media
+2.4 Transmission types
+    2.4.1 Point-to-point transmission
+    2.4.2 Broadcast transmission
+    2.4.3 Multicast transmission
+    2.4.4 Unicast transmission
+2.5 Error detection and correction
+    2.5.1 Error detection
+    2.5.2 Error correction
+
+
+
+3.   Network Interface Cards
+
+3.1 Network interface card (NIC)
+    3.1.1 Function of a NIC
+    3.1.2 Types of NICs
+    3.1.3 NIC installation
+    3.1.4 NIC configuration
+3.2 Ethernet
+    3.2.1 Ethernet standards
+    3.2.2 Ethernet frame
+    3.2.3 Ethernet addressing
+    3.2.4 Ethernet cabling
+    3.2.5 Ethernet hubs
+    3.2.6 Ethernet switches
+3.3 Token Ring
+    3.3.1 Token Ring standards
+    3.3.2 Token Ring frame
+    3.3.3 Token Ring addressing
+    3.3.4 Token Ring cabling
+    3.3.5 Token Ring hubs
+    3.3.6 Token Ring switches
+3.4 Fiber Distributed Data Interface (FDDI)
+    3.4.1 FDDI standards
+    3.4.2 FDDI frame
+    3.4.3 FDDI addressing
+    3.4.4 FDDI cabling
+    3.4.5 FDDI hubs
+    3.4.6 FDDI switches
+
+
+
+4.   Network Protocols
+
+4.1 Network protocols
+    4.1.1 Function of a network protocol
+    4.1.2 Types of network protocols
+    4.1.3 Network protocol stack
+4.2 Transmission Control Protocol/Internet Protocol (TCP/IP)
+    4.2.1 TCP/IP model
+    4.2.2 TCP/IP protocols
+    4.2.3 TCP/IP addressing
+    4.2.4 TCP/IP routing
+    4.2.5 TCP/IP applications
+4.3 Internet Protocol Suite (IP)
+    4.3.1 IP addressing
+    4.3.2 IP routing
+    4.3.3 IP fragmentation
+    4.3.4 IP options
+4.4 Transmission Control Protocol (TCP)
+    4.4.1 TCP segments
+    4.4.2 TCP connections
+    4.4.3 TCP congestion control
+    4.4.4 TCP reliability
+4.5 User Datagram Protocol (UDP)
+    4CN
+COMPUTER NETWORKS 
+
+
+Module -3 (Network Layer) 
+
+Network  layer  design issues.  Routing  algorithms  - The Optimality Principle, Shortest 
+path routing, Flooding, Distance Vector Routing, Link State Routing, Multicast routing, 
+Routing for mobile hosts. Congestion control algorithms.  
+Quality  of Service (QoS)  - requirements, Techniques for achieving good QoS.  
+
+
+
+
+Network Layer  
+
+• Network  layer  is responsible  for source  to destination(end  to end) delivery of a packet across  multiple  
+network  links.  
+• Routers and gateways operate in the network  layer.  
+• routing the packets to final destination.  
+• It must also take care when choosing routes to avoid overloading in the network  link 
+Functions Of Network Layer :  
+• Addressing  
+• Routing  
+• Internetworking  
+• Packetizing  
+• Fragmenting  
+Design issues - network layer
+
+Store -and-forward packet switching
+
+Services provided to transport layer
+
+Implementation of connectionless service
+
+Implementation of connection-oriented service
+
+Comparison of virtual-circuit and datagram networks
+
+1.Store -and-forward packet switching
+
+•A host with a packet to send transmits it to the nearest router, either on its own LAN or over a point-to-
+point link to the carrier
+
+•The packet is stored there until it has fully arrived and the link has finished its processing by verifying the
+checksum.
+
+•Then it is forwarded to the next router along the path until it reaches the destination host, where it is
+delivered. This mechanism is store -and-forward packet switching
+
+•The fig shows the environment of the network layer protocols :-• The major  components  of the system  are carriers  equipment  (routers  connected  by transmission  lines)  
+and 
+customers’ equipment , shown outside the oval.  
+• Host H1 is directly connected to one of the carrier’s routers, A, by a leased line. In contrast, H2 is 
+on a LAN, with a router, F, owned and operated by the customer. This router also has a leased 
+line to the carrier’s equipment.  
+ 
+ 
+2. Services provided to transport  layer  
+ 
+The services designed with the following goals in mind:  
+ The services provided should be independent of the underlying technology . Users of the service need 
+not be aware of  the physical  implementation  of the network  – for all they  know,  their  messages  could be  
+transported via  carrier  
+ The transport layer  should be shielded  from  the number,  type,  and topology  of the routers  present . 
+ie, All the 
+transport layer wants is a communication link,it need not know how the link is made  
+ The network addresses made available to the transport layer should use a uniform numbering plan . 
+There is a need for some uniform addressing scheme for network  addresses  
+ The two classes of service the network layer can provide to its  users:  
+• connectionless network  service . 
+• connection- oriented network service .3. Implementation of connectionless  service
+
+• If connectionless service is offered, packets are injected into the network individually and routed 
+independently  of 
+each other.
+• No advance setup is  needed.
+• In this context, the packets are frequently called datagrams and the network is called a datagram  network
+
+
+
+4. Implementation of connection oriented service
+
+
+• A path from the source router to the destination router must be established before any data packets can 
+be sent.
+• This connection is called a VC (virtual circuit), (eg. telephone  system)
+• The idea behind virtual circuits is to avoid having to choose a new route for every packet  sent.
+
+
+
+
+
+5. Comparison of virtual -circuit and datagram  networks
+
+For More Study Materials : https://www.keralanotes.com/Router
+• Network layer device
+• Routers are devices that connect two or more networks
+• Whenever a router encounters a packet, it must decide where to pass that packet.
+• A router might be connected to multiple routers
+• Each router has a routing table that decides the route to be followed for each packet
+• Routers look into routing table when a new packet arrives
+
+
+Routing table
+
+
+
+Routing Algorithms
+
+
+• Routing is the process of moving packets across a network from one host to another.
+• It is usually performed by dedicated devices called routers.
+• Routing is concerned with the problem of deter mining feasible paths or packets to follow from each
+source to destination
+• Network layer must determine the route or path taken by each packets as they flow from a sender to
+receiver. The algorithms that calculate these paths are referred to as routing algorithms
+• It is responsible for deciding the output line over which a packet is to be sentProperties of Routing algorithms
+
+• Optimality – capability of routing algorithm to select the best route
+• Simplicity and low overhead - With increasing complexity of the routing algorithms the overhead also
+increases
+• Robustness – means they should perform correctly in the face of unusual circumstances such as hardware
+failure
+• Stability -The routing algorithms should be stable under all possible circumstances.
+• Flexibility – they should quickly & accurately adapt to a variety of network circumstances
+• Fairness - Every node connected to the network should get a fair chance of transmitting their packets.
+
+
+Types of Routing algorithms
+(1) Non adaptive (static routing)
+(2) adaptive (dynamic routing).
+
+Non adaptive algorithms
+• routing decision is not based on measurements or estimates of the current traffic and topology.
+• The choice of the route is computed in advance, off- line, and downloaded to the routers when the network is booted.
+• This procedure is sometimes called static routing.
+Adaptive algorithms
+• routing decisions are based on measurements or estimates of the current traffic and topology.
+• Stability is an important goal for the routing algorithm.
+• This procedure is called dynamic routing.Different Routing Algorithms
+
+• The Optimality Principle
+• Shortest Path Routing
+• Flooding
+• Distance Vector Routing
+• Link State Routing
+• Hierarchical Routing
+• Broadcast Routing
+• Multicast Routing
+• Routing for Mobile Hosts
+• Routing in Ad Hoc Networks
+
+The Optimality Principle
+
+• The optimality principle states that if router J is on the
+optimal path from router I to router K, then the optimal
+path from J to K also falls along the same route.
+
+• As a direct consequence of the optimality principle, we can see that the set of optimal routes from all sources to a given destination form a tree rooted at the destination. Such a tree is called a sink tree and is illus trated in following Figure
+
+• distance metric is the number of hops.
+
+• Note that a sink tree is not necessarily unique; other trees with the same path lengths may exist.
+
+• The goal of all routing algorithms is to discover and use the sink trees for all routers.
+
+Optimality Principle
+If J is optimal path
+from I ->K
+Then, optimal path
+from J->K also same routeShortest Path Routing
+
+
+
+shortest- paths algorithms : - 1. Dijkstra's Algorithm
+
+
+• In this Algorithm, the criteria for shortest path is distance.
+• Shortest path problem is a problem of finding the shortest path(s) between vertices of a given graph
+• Shortest path is a path that has the least cost as compared to all other existing paths.
+• Min cost or least cost algorithm
+• Vertices are assumed to act as routers and edges act as connecting media(link)
+• A node has zero cost w.r.t itself
+• Note: Dijkstra's Algorithm is applicable only when cost of all the nodes is non-negative.
+
+
+Neethu Mathew, CSE Dept. EKCTC
+
+
+
+
+
+1. Each node is labelled (in parentheses) with its distance from the source node along the best known
+path [eg. (2,A)].
+2. Initially, no paths are known, so all nodes are labelled with infinity. As the algorithm
+proceeds and paths are found, the labels may change, reflecting better paths.
+3. A label may be either tentative or permanent.
+4. Initially, all labels are tentative.
+5. When it is discovered that a label represents the shortest possible path from the source to
+that node, it is made permanent and never changed thereafter.
+
+
+d(u)+w(u,v) <d(v) =>d(v)= d(u)+w(u,v)APPLICATIONS 
+Flooding is not practical in most applications, but it does have some uses. For example, 
+• In military applications , the tremendous robustness of flooding is highly  desirable.  
+• In distributed database applications , it is sometimes necessary to update all the databases concur rently, in 
+which case flooding can be  useful.  
+• In wireless networks , all messages transmitted by a station can be received by all other stations within its 
+radio range, flooding is  useful.  
+ADVANTAGES 
+• Highly Robust, emergency or immediate messages can be sent (eg military applications)  
+• Set up the route in virtual  circuit  
+• Flooding always chooses the shortest path  
+• Broadcast messages to all the  nodes  
+• This algorithm is very simple to  implement.  
+DISADVANTAGES:  
+• Flooding can be costly in terms of wasted bandwidth 
+• Messa ges can become duplicated in the network 
+ 
+ 
+Distance Vector Routing (DVR)  
+• In DVR, least -cost route between any two nodes is the route with minimum  distance  
+• In distance vector routing, each router maintains a routing table indexed by, and containing one entry for, 
+each router in the  subnet.  
+• This entry contains two parts:  
+ the preferred outgoing line to use for that  destination  
+ estimate of the distance to that  destination.  
+• each node maintains a vector (table) of minimum distances to every  node.  
+• This table at each node guides the packets to the desired node by showing the next stop in the route (next -hop 
+routing).  ie, 
+sending the packet to the desired node through the least cost route from the table  
+• Distance  vector  routing  algorithms  operat e by having  each  router  maintain  a table  giving the best  known  
+distance  to each  
+destination and which line to use to get there.  
+• The distance vector routing algorithm is sometimes called by other names including distributed Bellman -Ford 
+or Ford - Fulkerson. It was the original ARPANET routing algorithm and was also used in the Internet under the 
+name  RIP.Distance Vector Algorithm – 
+
+1. A router transmits its distance vector to each of its neighbors in a routing  packet.  
+2. Each router receives and saves the most recently received distance vector from each of its  neighbors.  
+3. A router recalculates its distance vector  when:  
+a) It receives a distance vector from a neighbo r containing different information than before.  
+b) It discovers that a link to a neighbor has gone  down.  
+ 
+The DV calculation is based on minimizing the cost to each destination  
+  
+ 
+Example : prepare the routing table for the following network  
+Distance vector routing table
+
+Find routing table for all other nodes
+
+Advantages
+• It is simpler to configure and maintain than link state routing.
+Drawbacks
+• React rapidly to good news when a router comes up.
+• Though it finally converges to correct result, it takes long time when where is a bad news.
+• There are several attempts to solve the problem, but none is perfect.
+• It does not take line bandwidth into account.
+• It took too long to converge.
+• It is slower to converge than link state.
+• It is at risk from the count-to-infinity problem.
+• It creates more traffic. Hop count updates take place on a periodic basis, even if there are no
+changes in the network topology, so bandwidth-wasting broadcasts still occur.
+• For larger networks, distance vector routing results in larger routing tables since each router must
+know about all other routers. This can lead to congestion on WAN links.count- to-infinity  problem:
+
+• The problem with Distance Vector Routing (DVR) is whenever a link is broken, other routers unknowingly 
+given information that they know how to reach a disconnected node. This false information will propagate 
+to all routers. This problem is known as Count t o Infinity Problem.
+
+• In this example, A know that it can get to C via B at a cost of 2 & B will know that it can get to C at a cost of  1
+• If the link between B and C is disconnected, then B will know that it can no longer get to C via that link and will remove it from its  table.
+• Before it can send any updates it’s possible that it will receive an update from A which will be advertising that 
+it can get  to 
+C at a cost of 2.
+• B can get to A at a cost of 1, so it will update a route to C via A at a cost o f 3.
+• A will then receive updates from B later and update its cost to 4.
+• They will then go on feeding each other bad information toward infinity which is called as Count to Infinity  problem
+
+• The main  issue  with  Distance  Vector  Routing  (DVR)  protocols is Routing  Loops.  Routing  loops  usually  
+occur  when  an 
+interface goes down or two routers send updates at the same time
+• This routing loop in the DVR network causes the Count to Infinity  Problem.
+
+• Solutions for count to infinity  problem
+• Route  poisoning
+• Split horizon
+For More Study Materials : https://www.keralanotes.com/link state routing (LSR)
+• A method in which each router shares its neighbourhood information with every other router in the  
+internetwork.  
+• Each nod e has a complete map of the topology  
+• Used in packet switching  networks  
+• Link state routing protocol: OSPF,  IS-IS 
+• Idea behind LSR is simple and can be stated as 5 parts. Each router must do the  following 
+o Discover its neighbors and learn their network  addresses.  
+o Measure the distance or cost metric to each of its  neighbors.  
+o Construct a packet telling all it has just  learned.  
+o Send this packet to and receive packets from all other  routers.  
+o Compute the shortest path to every other router.  
+ 
+ 
+5 steps  
+1. Learning about the  neighbors  
+• When a router is booted, its first task is to learn who its neighbors  are. 
+• It accomplishes this goal by sending a special HELLO packet on each point -to-point  line.  
+• The router on the other end is expected to send back a reply telling who it  is. 
+2. Measuring Link  Cost  
+• Each router must know a reasonable estimate of the delay to each of  its neighbors.  
+• The delay of links may be factored into cost  
+• The most  direct  way to determine  this delay  is to send  a special  ECHO  packet  over  to neighbors  that the 
+other  side is 
+required to send back immediately.  
+• By measuring the round -trip time and dividing it by two, the sending router can get a reasonable 
+estimate of the delay.  
+• Issue is whether to take the load into account when measuring the  delay.  
+To factor the load in, the round -trip timer must be started when the ECHO packet is queued.  
+To ignore the load, the timer should be started when the ECHO packet reaches the front of the 
+queue.  3. Building Link State Packets(LSP)
+• Once the information for the exchange has been collected, the next step is for each router to build a
+packet containing all the data.
+• The packet starts with the identity of the sender, followed by a sequence number and age, and a list of
+neighbours.
+• The link state packets are built either at regular intervals or when some significant event occurs
+• An example network is presented with costs shown as labels on the lines.
+• The corresponding link state packets for all six routers are shown.
+• Building the link state packets is easy.
+• The hard part is determining when to build them.
+• One possibility is to build them periodically, that is, at regular intervals.
+• Another possibility is to build them when some significant event occurs, such as a line or neighbor
+going down
+or coming back up again or changing its properties appreciably.
+
+(a) A subnet.
+(b) The link state packets
+for this subnet.Distributing Link State  Packets
+• Link state packets are to be distributed  reliably.
+• As the packets are distributed and installed, the routers getting the first ones will change their routes. 
+Consequently, the different routers may be using different versions of the topology, This can lead to 
+inconsistencies, loops, unreachable machines, and other  problems.
+• Flooding is used to distribute the link state  packets.
+• To keep the flood in check, each packet contains a sequence number that is incremented for each new packet  sent.
+• Routers keep track of all the (source router, sequence) pairs they  see.
+• When a new link state packet comes in, it is checked against the list of packets already  seen.
+• If it is new, it is forwarded on all lines except the one it arrived  on.
+• If it is a duplicate, it  is discarded.
+• If a packet with a sequence number lower than the highest one seen so far ever arrives, it is rejected since the 
+router  has more recent data.
+
+Computing the shortest Routes
+• Once a router has accumulated a full set of link state packets, it can construct the entire subnet graph
+because every link is represented. Every link is represented twice, once for each direction. The two 
+values can be averaged or used separately.
+• Dijkstra’s algorithm can be run at each router to find the shortest path to every other  router.
+• Dijkstra's algorithm can be run locally to construct the shortest path to all possible  destinations.
+• The results of this algorithm can be installed in the routi ng tables, and normal operation resumed.
+• For a subnet with n routers, each of which has k neighbors, the memory required to store the input data is proportional to  kn.
+• the computation time can be an issue. but, in many practical situations, link state rout ing works  welllink state knowledgeRouting protocols specify how routers communicate with Each other
+An autonomous system (AS) is a group of networks and routers under the authority of a single
+administration.
+Routing inside an autonomous system is called intra-domain routing.
+Routing between autonomous systems is called inter-domain routing
+Routing Information Protocol (RIP) is an implementation of the distance vector protocol.
+Open Shortest Path First (OSPF) is an implementation of the link state protocol.
+Border Gateway Protocol (BGP) is an implementation of the path vector protocol
+An intra domain routing protocol
+1. Routing Information Protocol (RIP)
+Straightforward implementation of Distance Vector Routing
+Hop count as a Routing metric for RIP
+Hop count:
+Hop count is the number of routers occurring in between the source and destination network.
+RIP prevents routing loops by limiting the number of hops allowed in a path from source and destination.
+The maximum hop count for RIP is 15
+hop count of 16 is considered as network unreachable.Advantages of a RIP protocol:
+- It is easy to configure
+- It has less complexity
+- The CPU utilization is less.
+
+Features of RIP
+1. Updates of the network are exchanged periodically.
+2. Updates (routing information) are always broadcast.
+3. Full routing tables are sent in updates.
+4. Routers always trust routing information received from neighbor routers. This is also known as Routing on rumors.
+
+RIP Problems
+- RIP takes a long time to stabilize
+- Even for a small network, it takes several minutes until the routing tables have settled after a change
+- RIP has all the problems of distance vector algorithms, e.g., count-to-Infinity
+- RIP uses split horizon to avoid count-to-infinity
+- The maximum path in RIP is 15 hopsIn brief the RIP protocol works as follows:
+
+• Each router initializes its routing table with a list of locally connected networks. Periodically, each router
+advertises the entire contents of its routing table over all of its RIP-enabled interfaces.
+
+• Whenever a RIP router receives such an advertisement, it puts all of the appropriate routes into its
+routing table and begins using it to forward packets. This process ensures that every network connected
+to every router eventually becomes known to all routers.
+
+• If a router does not continue to receive advertisements for a remote route, it eventually times out that
+route and stops forwarding packets over it.
+
+• Every route has a property called a metric, which indicates the "distance" to the route's destination.
+
+• Every time a router receives a route advertisement, it increments the metric.
+
+• The maximum metric permitted by RIP is 16, which means that a route is unreachable. Ie., the protocol
+cannot scale to
+networks more than 15 hops to a given destination.
+
+• RIP also includes some optimizations of this basic algorithm to improve stabilization of the routing
+database and to eliminate routing loops.
+
+• When a route is determined to be unreachable, RIP routers do not delete it straightaway. Instead they
+continue to
+advertise the route with a metric of 16 (unreachable).
+
+• A "Request" message allows a newly-started router to rapidly query all of its neighbours’ routing tables.
+
+RIP messages: ---------
+
+Request
+
+• A request message is sent by a router that has just come up or by a router that has some time-out entries
+
+• A request can ask about specific entries or all entries
+
+Response
+
+• A response can be either solicited (ask for a proposal) or unsolicited (30s or when there is a change in the
+routing table)
+
+RIP Timers
+
+ Periodic timer
+
+• It controls the advertising of regular update message (25 ~ 30 sec)
+
+ Expiration timer
+
+• It governs the validity of a route (180 sec)
+
+ Garbage collection timer
+
+• An invalid route is not purged(remove that not in use) from the routing table until this timer expires (120 sec)OSPF (Open Shortest Path First) protocol
+
+• The OSPF protocol is one of a family of IP Routing protocols
+• The Open Shortest Path First (OSPF) protocol is an intra-domain routing protocol based on link state routing.
+• It Divides an autonomous system(AS) into areas to handle routing efficiently
+• At the Border of an area, special routers called area border routers summarize the information
+about area and send to other areas. All areas inside AS connected to a special area called backbone.
+Routers inside backbone are called backbone routers
+• OSPF allows to assign a cost called metric to each route
+• This Metric based on type of service: Minimum delay, maximum throughput, reliability, etc.
+• Connection is called a link.
+• 4 types of link: point to point,transient,stub,virtual
+
+
+Features of OSPF
+
+• Provides authentication of routing messages
+• Enables load balancing by allowing traffic to be split evenly across routes with equal cost
+• Supports subnetting (is the practice of dividing a network into two or smaller networks)
+• Supports multicasting
+• Allows hierarchical routing
+• Handles error detection by itselfOSPF Packet format :
+
+
+The five types of OSPF messages
+
+
+• Version: version of the OSPF
+• Type: It specifies the type of the packets, there are 4 types
+of packets
+* hello packet
+* link state request
+* link state update
+* Link state acknowledgement
+• Source address:It defines the address of the node to be send.
+• Area id: It specifies ID of different areas
+• Check sum:It deals with error detection and correction
+• Authentication type:It has two value either zero or other numbers except zero
+• Authentication data: used by authentication procedure
+
+
+Comparison of RIP and OSPFWhen a new host enters an area, either by connecting to it or just wandering into the cell, his computer must 
+register itself with the foreign agent there.  
+The registration procedure typically works like this:  
+ 1) Periodically, each foreign agent broadcasts a packet announcing its existence and address. A newly 
+arrived mobile host may wait for one these messages, b ut if one arrives quickly enough, the mobile host 
+can broadcast a packet saying:" are there any foreign agent around?  " 
+ 2) The mobile host just register with the foreign agent, giving its home address, current data link layer 
+address, and  some  
+security inf ormation. 
+ 3) The foreign  agent  contacts  the mobile  hosts  home  agent  and says,  one of your  hosts  is over  here,  It also 
+includes  the 
+security information, to convince the home agent that the mobile hosts are really there.  
+ 4) The home agent examines the security information, which contains a timestamp, to prove that it was 
+generated within the past few seconds. If it is happy, it tells the foreign agent to  proceed.  
+ 5) When the foreign agent gets the acknowledgement from the home agent, it makes an entry in its table and 
+informs the 
+mobile hosts that it is now registered.  
+ 
+  
+ 
+Fig :Packet routing for mobile hosts  
+ 
+• When a packet is sent to a mobile host, it is routed to the host's home LAN because that is what the 
+address says should be done, as illustrated in step 1 of following figure. Here the sender, in the northwest 
+city of Seattle, wants to send a packet to a h ost normally across the United States in New York.  Packets 
+sent to the mobile host on its home LAN in New York are intercepted by the home agent there. The 
+home agent then looks up the mobile host's new (temporary) location and finds the address of the foreign agent handling the mobile host, in Los Angeles.How Congestions Happens ?
+The following factors responsible for congestion:
+• Insufficient memory to store arriving  packets
+• Slow network links
+• Slow processors
+• Mismatch between system  parts
+• Shortage of buffer  space
+
+General Principles of Congestion Control
+
+• Solutions to congestion problems can be divided into two  categories:
+ open loop
+ closed loop.
+• Congestion control refers to the techniques & mechanisms which can either prevent congestion from
+happening or remove congestion after it has taken  place.
+• Open loop congestion control is based on prevention of congestion whereas the closed loop solutions are
+for removing the  conges tion
+Open loop:
+• Open loop solutions try to solve the problems by excellent design to prevent the congestion from  happening
+• Open loop control is exercised by using the tools such as deciding when to accept the new packets,when to discard the packets, which packets are to be discarded and making the scheduling decisions at various
+points.
+• Open loop solutions attempt to solve the problem by good design, to make sure it does not occur in the first
+place.  Once 
+the system is up and running, midcourse corrections are not made.Closed loop: -
+• Closed loop congestion control uses some kind of  feedback.
+• This approach has three parts when applied to congestion  control.
+1) Detect when and where congestion  occurs by Monitoring the  system.
+2) Pass information about congestion to places where action can be taken.
+3) Adjust system operations to correct the problem.
+
+
+Neethu Mathew , CSE Dept. EKCTC
+
+
+
+
+
+Congestion Prevention Policies
+
+
+
+
+
+For More Study Materials : https://www.keralanotes.com/Neethu Mathew , CSE Dept. EKCTCNeethu Mathew , CSE Dept. EKCTCNeethu Mathew , CSE Dept. EKCTCQuality of Service (QoS) - requirements, Techniques for achieving
+good QoS.
+
+
+A stream of packets from a source to a destination is called a flow.
+In a connection-oriented network, all the packets belonging to a flow follow the same route; in a connectionless
+network, they may follow different routes.
+The needs of each flow can be characterized by 4 primary parameters: reliability, delay, jitter, and bandwidth. Together these determine the QoS (Quality of Service) the flow requires.
+
+
+
+
+Techniques for Achieving Good Quality of Service
+
+
+
+
+ Overprovisioning
+ Buffering
+ Traffic Shaping
+ Leaky bucket algorithm
+ Token bucket algorithm
+ Resource reservation
+ Proportional routing
+ Admission control
+ Packet SchedulingOverprovisioning:
+• To provide so much router capacity, buffer space, &bandwidth that the packets just fly through easily.
+• The trouble with this solution is that it is expensive.
+• As time goes on and designers have a better idea of how much is enough, this technique may even become practical.
+Buffering:
+• Flows can be buffered on the receiving side before being delivered.
+• Buffering them does not affect the reliability or bandwidth, and increases the delay, but it smooths out the jitter. For audio and video on demand, jitter is the main problem, so this technique helps a lot.
+Traffic Shaping:
+• One of the main causes of congestion is that traffic is often bursty.
+• Traffic shaping is about regulating the average rate (and burstiness) of data transmission.
+• Monitoring a traffic flow is called traffic policing.
+• Agreeing to a traffic shape and policing it afterward are easier with virtual-circuit subnets than with datagram subnets.
+• When a connection is set up, the user and the subnet(i.e., the customer and the carrier) agree on a certain traffic pattern (i.e., shape) for that circuit. Sometimes this is called a service level agreement.
+• Traffic shaping is a mechanism to control the amount and rate of traffic sent to the network
+• The 2 traffic shaping techniques are:-
+• Leaky bucket
+• Token bucket• Each host is connected to the network by an interface containing a leaky bucket, that is, a finite internal  
+queue.  
+• If a packet arrives at the queue when it is full, the packet is discarded. In other words, if one or more 
+processes within the host try to send a packet when the maximum number is already queued, the 
+new packet is discarded. This arrangement can be built into the hardware interface or simulated by 
+the host operating  system.  
+• host is allowed to put one packet per clock tick onto the  network.  
+• This mechanism turns an uneven flow of packets from the user processes inside the host into an even 
+flow of packets onto the network, smoothing out bursts and greatly reducing the chances of 
+congestion. The Leaky Bucket algorithm can be implemented for packets or a constant amount of 
+bytes, send within each time  interval.  
+• Conceptually each network interface contains a leaky bucket. And the following steps are  performed:  
+o When the host has to send a packet, the packet is thrown into the  bucket.  
+o The bucket leaks a t a constant rate, meaning the network interface transmits packets at a constant rate.  
+o Burst traffic is converted to a uniform traffic by the leaky  bucket.  
+ 
+ 
+ 
+Neethu Mathew , CSE Dept. EKCTC  
+ 
+ 
+ 
+   
+ 
+  
+ 
+ Token bucket  algorithm  
+ 
+• A variant on the leaky  bucket 
+• Similar to the leaky bucket but it allows for varying output rates  
+• This is useful when larger burst of traffic  arrive  
+• In this approach , a token bucket is used to manage the queue regulator that controls the rate of packet 
+flow into the network  
+• Each  token grants the ability to transmit a fixed no. of bytes, if the token bucket fills,newly generated 
+tokens are discarded  
+• If the flow delivers more packets than the queue can store, the excess packets are discarded  
+•  The leaky  bucket  algorithm enforces  a rigid  output  pattern  at the average  rate,  no matter  how  bursty  
+the traffic  is. For many  applications,  it is better  to allow  the output  to speed  up somewhat when  large  
+bursts  arrive.  One such  algorithm is the token bucket algorithm.  
+For More Study Materials : https://www.keralanotes.com/
