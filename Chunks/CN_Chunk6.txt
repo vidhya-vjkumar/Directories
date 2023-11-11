@@ -1,0 +1,88 @@
+A transmission medium can be defined as anything that can carry information from a source to a destination.
+Guided media
+�Guided media, which are those that provide a conduit from one device to another, include twisted-pair cable, coaxial
+cable, and fiber-optic cable.
+1. Twisted-Pair Cable
+�A twisted pair consists of two conductors (normally copper), each with its own plastic insulation, twisted together
+�One of the wires is used to carry signals to the receiver, and the other is used only as a ground reference� Why to twist the wires?
+Twisting of wires will reduce the effect of noise or external interference.
+The number of twists per unit length will determine the quality of cable.
+More twists means better quality
+� 2 types: a) Shielded Twisted-Pair Cable (STP)
+b) Unshielded Twisted-Pair Cable (UTP)
+� UTP:
+The most common twisted-pair cable used in communications
+Very cheap
+Easy to install
+Badly affected by the noise interference
+� STP:
+STP cable has a metal foil or braided mesh to cover each pair of insulating conductors. This is known as metal shield.It
+reduces the interference of the noise
+metal casing improves the quality of cable by preventing the penetration of noise or crosstalk
+it is bulkier
+more expensive
+For More Study Materials : https://www.keralanotes.com/**2. Twisted-Pair Cable**
+
+Twisted-pair cable consists of two insulated copper wires twisted together. It is the most common type of cable used for
+telephone and computer networks.
+
+* Applications:
+    * In point to point and point to multipoint communications
+    * Telephone systems
+    * Local-area networks, such as l0Base-T and l00Base-T, also use twisted-pair cables.
+    * in telephone lines to provide voice and data channels.
+
+In twisted pair, in addition to the signal sent by the sender on one of the wires, interference (noise)and crosstalk may affect
+both wires and create unwanted signals. If the two wires are parallel, the effect of these unwanted signals is not the same inboth wires because they are at different locations relative to th e noise or crosstalk sources. This results in a difference at the
+receiver. By twisting the pairs, a balance is maintained. Twisting makes it probable that both wires are equally affected by
+external influences (noise or crosstalk). The number of twist s per unit of length has some effect on the quality of the cable.
+
+**2. Coaxial Cable**
+
+Coaxial cable (or coax) carries signals of higher frequency ranges than those in twisted pair cable.
+
+* Coaxial cable has a central core conductor of solid or stranded wire (usu ally copper) enclosed in an insulating sheath, which is, in
+turn, encased in an outer conductor of metal foil, braid, or a combination of the two.
+* The outer metallic wrapping serves both as a shield against noise and as the second conductor, which completes the
+circuit.
+* This outer conductor is also enclosed in an insulating sheath, and the whole cable is protected by a plastic cover**Cable**
+
+* Coaxial cable
+  * Categorized by their radio government (RG) ratings
+  * Need coaxial connectors to connect to devices
+  * Costlier than twisted-pair cable
+  * Excellent noise immunity
+  * Cheaper than optical fiber cables
+  * Large bandwidth and low losses
+* Twisted-pair cable
+  * Less expensive than coaxial cable
+  * More susceptible to noise than coaxial cable
+  * Used in telephone networks and Ethernet LANs
+* Optical fiber
+  * Accepts and transports signals in the form of light
+  * Made of glass or plastic
+  * Consists of an inner glass core surrounded by a glass cladding which has lower refractive index
+  * Uses reflection to guide light through a channel
+  * Light is launched into the fiber using a light source such as light emitting diode(LED) Or laser
+  * A glass or plastic core is surrounded by a cladding of less dense glass or plastic
+  * Costlier than other 2 types
+  * Advantages:
+    * Higher bandwidth
+    * Less signal attenuation
+    * Immunity to electromagnetic interference. (Electrom agnetic noise cannot affect fiber-optic cables.)
+    * Resistance to corrosive materials (Glass is more resistant to corrosive materials than copper.)
+    * Light weight (Fiber-optic cables a re much lighter than copper cables.)
+    * Greater immunity to tapping. (Fiber-optic cables are more immune to tapping than copper cables. Copper cables create
+      antenna effects that can easily be tapped.)Disadvantages:
+- Installation and maintenance.
+- Unidirectional light propagation.
+- Cost.
+Applications:
+- Fiber-optic cable is often found in backbone networks
+- Telephone systems
+- Some cable TV companies use a combination of optical fiber and coaxial cable,thus creating a hybrid network.
+- Local-area networks (such as 100Base-FX network (Fast Ethernet) and 1000Base-X also use fiber-optic cable)
+Unguided media
+- Unguided media transport electromagnet ic waves without using a physical conductor
+- Signals are normally broadcast through free space and thus are available to anyone who has a device capable of
+receiving them.*

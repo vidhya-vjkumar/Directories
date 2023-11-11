@@ -1,0 +1,52 @@
+*Electromagnetic Waves**
+
+Electromagnetic waves are a type of wave that consists of an electric field and a magnetic field that are perpendicular to each other and to the direction of travel of the wave. Electromagnetic waves are produced by the acceleration of charged particles, and they can travel through a vacuum.
+
+**Types of Electromagnetic Waves**
+
+There are many different types of electromagnetic waves, each with its own unique properties. Some of the most common types of electromagnetic waves include:
+
+* **Radio waves:** Radio waves have the longest wavelengths and the lowest frequencies of all electromagnetic waves. They are used for communication, broadcasting, and navigation.
+* **Microwaves:** Microwaves have shorter wavelengths and higher frequencies than radio waves. They are used for cooking, radar, and telecommunications.
+* **Infrared:** Infrared waves have even shorter wavelengths and higher frequencies than microwaves. They are used for heat sensing, night vision, and remote controls.
+* **Visible light:** Visible light is the type of electromagnetic radiation that we can see with our eyes. It has wavelengths that range from about 400 to 700 nanometers.
+* **Ultraviolet:** Ultraviolet waves have shorter wavelengths and higher frequencies than visible light. They are used for tanning, disinfection, and medical imaging.
+* **X-rays:** X-rays have even shorter wavelengths and higher frequencies than ultraviolet waves. They are used for medical imaging, security screening, and industrial inspection.
+* **Gamma rays:** Gamma rays have the shortest wavelengths and highest frequencies of all electromagnetic waves. They are produced by nuclear reactions and are used for medical treatment and cancer research.
+
+**Applications of Electromagnetic Waves**
+
+Electromagnetic waves have a wide variety of applications in our everyday lives. Some of the most common applications of electromagnetic waves include:
+
+* **Communication:** Electromagnetic waves are used for communication in a variety of ways, including radio, television, and cell phones.
+* **Navigation:** Electromagnetic waves are used for navigation in a variety of ways, including radar, GPS, and satellite navigation systems.
+* **Medical imaging:** Electromagnetic waves are used for medical imaging in a variety of ways, including X-rays, CT scans, and MRI scans.
+* **Industrial inspection:** Electromagnetic waves are used for industrial inspection in a variety of ways, including non-destructive testing and metal detection.
+* **Security screening:** Electromagnetic waves are used for security screening in a variety of ways, including airport security and metal detectors.
+* **Other applications:** Electromagnetic waves are also used for a variety of other applications, including weather forecasting, remote sensing, and telecommunications.Performance indicators
+1. Bandwidth
+� The data carrying capacity of the network or transmission media
+� The Max channel capacity to transmit data
+� The Volume of data transmitted at a particular time
+� The term can be used in two different contexts with two different measuring values:
+    * bandwidth in hertz
+    * bandwidth in bits per second.
+� bandwidth in hertz, refers to the range of frequencies in a composite signal or the range of frequencies that a channel
+can pass.
+� For example, we can say the bandwidth of a subscriber telephone line is 4 kHz.
+2. Throughput
+� The measure of how fast we can actually send data through a network.
+� At first glance, bandwidth in bits per second and throughput seem the same, but they are different. The bandwidth is
+a potential measurement of a link; the throughput is an actual measurement of how fast we can send data.
+� bandwidth in bits per second, refers to the speed of bit transmission in a channel or link.ie, the number of bits per
+second that a channel, a link, or even a network can transmit.
+� For example, one can say the bandwidth of a Fast Ethernet network (or the links in this network) is a maximum
+of 100 Mbps. This means that this network can send 100 Mbps.
+� an increase in bandwidth in hertz means an increase in bandwidth in bits per second. The relationship depends on
+whether we have baseband transmission or transmission with modulationQueuing Time
+The third component in latency is the queuing time, the time needed for each intermediate or end device to hold the message before it can be processed.
+The queuing time is not a fixed factor; it changes with the load imposed on the network.
+When there is heavy traffic on the network, the queuing time increases. An intermediate device, such as a router, queues the arrived messages and processes them one by one. If there are many messages, each message will have to wait.
+Bandwidth-Delay Product
+Bandwidth and delay are two performance metrics of a link. what is very important in data communications is the product of the two, the bandwidth-delay product.
+The bandwidth-delay product defines the number of bits that can fill the link.

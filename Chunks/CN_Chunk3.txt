@@ -1,0 +1,31 @@
+Layers can offer two different types of service to the layers above them:
+
+* **Connection-oriented**
+* **Connectionless**
+
+1. **Connection-oriented service**
+
+* This service follows a sequence of operations:
+    * Establish a connection
+    * Data transfer
+    * Terminate the connection
+
+* To talk to someone, you pick up the phone, dial the number, talk, and then hang up. Similarly, to use a connection-
+oriented network service, the service user first establishes a connection, uses the connection, and then releases the
+connection. In some cases when a connection is established, the sender, receiver conduct a negotiation about the
+parameters to be used, such as maximum message size, quality of service required, and other issues. Typically, one side
+makes a proposal and the other side can accept it, reject it, or make a counter-proposal.
+
+* Here, data arrive in the order they were sent.
+* This is a reliable service.
+
+2. **Connectionless service**
+
+* No connection Establishment
+* Unreliable (meaning not acknowledged) connectionless service
+* Does not return an acknowledgement to the sender.
+* Normally, when two messages are sent to the same destination, the first one sent will be the first one to arrive.
+However, it is possible that the first one sent can be delayed so that the second one arrives first.
+* There is no guarantee.
+* The order in which messages are sent and arrived can be different. � OSI Reference Model
+� TCP/IP Reference Model

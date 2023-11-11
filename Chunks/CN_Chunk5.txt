@@ -1,0 +1,52 @@
+* The 4 layers of TCP/Model are: host-to-network, internet, transport, and application layer
+
+2. Internet Layer
+
+* Internet layer defines an official packet format and protocol called IP (Internet Protocol).
+* The internet layer is equivalent to the network layer.
+* The job of the internet layer is to deliver IP packets where they are supposed to go.
+* Packet routing & avoiding congestion are the major issue here.
+* For these reasons, it is reasonable to say that the TCP/IP internet layer is similar in functionality to the OSI
+network layer
+* uses four supporting protocols:
+ARP - Address Resolution Protocol
+RARP -Reverse Address Resolution Protocol
+ICMP -Internet Control Message Protocol
+IGMP -Internet Group Message Protocol3. Transport Layer 
+�UDP and TCP are transport level protocols responsible for delivery of a message from a process (running
+program) to another process.
+oTCP (Transmission Control Protocol)
+oUDP (User Datagram Protocol) 
+�A new transport layer protocol, SCTP , has been devised to meet the needs of some newer applications.
+oStream Control Transmission Protocol (SCTP)
+4. Application Layer
+�Provide services to users
+�contains all the higher-level protocols like
+file transfer (FTP)
+electronic mail (SMTP)
+Domain Name System (DNS)
+Terminal network (TELNET)
+Hyper Text Transfer Protocol (HTTP)Protocols and networks in the TCP/IP model
+
+ARPANET - Advanced Research Projects Agency Network
+SATNET - Sustainable Agriculture Trainers Network
+
+OSI MODEL TCP/IP MODEL
+
+Contains 7 layers Contains 4 layers
+
+Considered a theoretical model Considered more reliable
+
+It distinguishes between service,
+interface and protocol Does not clearly distinguish between
+service, interface and protocol
+
+Model was developed before the
+development of protocols Protocols were developed first & then
+the model was developed
+
+Protocol independent standard Protocol dependent standard
+
+More complexity due to more number of
+layers Less complexity due to less number of
+layersTransmission Media

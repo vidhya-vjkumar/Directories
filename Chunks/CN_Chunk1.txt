@@ -1,0 +1,89 @@
+Module 1 
+Computer Network
+A set of devices (nodes) connected by a communication link (medium)
+�A node can be a computer, printer or any other device capable of sending/receiving data
+�A link can be a cable, air, optical fiber or any medium which can transport a signal carrying information
+Computer network is an Interconnected collection of computers
+�2 computers are interconnected if they are able to exchange information
+�Purpose : For sharing data & resources
+�Communication is the process of exchanging information between two persons or devices
+For More Study Materials : https://www.keralanotes.com/Uses of Computer Networks
+
+Business Applications
+- Resource sharing
+- Information sharing
+
+Home applications
+- Person-to-person communication
+- Access to remote information
+- Interactive entertainment
+- E-commerce
+
+Mobile users (mobile with internet)
+
+Advantages of Computer Networking
+- It enhances communication and availability of information.
+- It allows for more convenient resource sharing
+- It makes file sharing easier
+- It is highly flexible.
+- Improved security
+- Increased speed
+
+Disadvantages of Computer Networking
+- Privacy issues
+- security difficulties
+- Presence of computer viruses and malware
+- Failure of server
+- High cost of installation
+- Proper & careful maintenanceSocial Issues
+Introduction of networking has introduced new social, ethical and political problems.
+- Newsgroups debate sensitive issues.
+- Network operator risk being sued for contents.
+- Right to free speech may be violated.
+- Anonymous message can be desirable.
+
+Network Topologies
+
+�Network Topology is the pattern used to arrange the nodes of network (describe the way computers are connected).
+�Basic topologies: bus, ring, star, mesh, hybrid
+
+1. Bus Topology
+
+oSimplest
+
+odesigned in such a way that all the stations are connected through a single cable(known as a backbone cable)
+
+oAdvantages: low cost cable, moderate data speed, limited failure
+
+oDisadvantages : reconfiguration is difficult, signal interference, extensive cabling**Network Topologies**
+
+1. **Bus Topology**
+
+�A single cable connects all the devices in the network
+�The cable is called the bus
+�The bus is a shared medium
+�All the devices on the bus can communicate with each other
+�If one device is down, the entire network is down
+
+2. **Ring Topology**
+
+�All computers are connected in a closed loop
+�Each node connects to exactly two other nodes, creating a circular network structure.
+�One broken device can disable entire network
+
+3. **Star Topology**
+
+�All the devices are connected to a single hub
+�This hub is the central node and all other nodes are connected to the central node
+�Failure of central hub will make the entire network collapse
+�Cost of installation is high4. Mesh Topology
+� Computers are interconnected with each other
+� There are multiple paths from one computer to another
+� Internet is an example of mesh topology
+� 2 types � fully connected and partially connected (certain computers are connected) mesh topology
+5. Hybrid Topology
+� Combination of various different topologies
+� Two or more topologies are combined together
+� Advantages: reliable, flexible, effective
+� Disadvantages: complex design , costly infrastructure
+For More Study Materials : https://www.keralanotes.com/Network hardware

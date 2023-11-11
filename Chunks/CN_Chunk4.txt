@@ -1,0 +1,111 @@
+Reference Models (network architectures)
+
+For More Study Materials: https://www.keralanotes.com/OSI stands for Open Systems Interconnection
+Designed by the International Standards Organization (ISO)
+The model is called the ISO-OSI (Open Systems Interconnection) Reference Model
+(Because it deals with connecting open systems�that is, systems that are open for communication with other systems.)
+It has seven layers: OSI Reference Model
+1
+2
+3
+4
+5
+6
+7
+The OSI model is a Layered architecture
+Host A Host B
+APDU
+PPDU
+SPDU
+TPDU
+PACKET
+FRAME
+BIT
+Name of unit exchanged
+PDU- protocol data unit
+APDU- application PDU
+PPDU- Presentation PDU3. Network Layer
+
+The network layer is responsible for the source-to-destination delivery of a packet.
+
+At this layer, the unit of data exchanged among nodes is typically called a packet.
+
+Network layer ensures that each packet gets from its point of origin to its final destination.
+
+Other responsibilities of the network layer includes routing and Logical addressing.
+
+Logical addressing: The physical addressing implemented by the data link layer handles the addressing problem
+locally. If a packet passes the network boundary, we need another addressing system to help distinguish the source
+and destination systems. The network layer adds a header to the packet coming from the upper layer that, among
+other things, includes the logical addresses of the sender and receiver.
+
+Routing : When there are multiple paths between source and destination, only one route must be chosen.
+
+4. Transport Layer
+
+Here, the unit of data exchanged is TPDU.
+
+The transport layer is responsible for process-to-process delivery of the entire message.
+
+Other responsibilities:
+
+* Connection control: The transport layer can be either connectionless or connection oriented. (A connection oriented
+transport layer makes a connection with the transport layer at the destination machine first before delivering the
+packets. After all the data are transferred, the connection is terminated.)
+* Protocols used :TCP-Transmission control protocol (connection oriented)
+UDP-user datagram protocol (connectionless)
+* Segmentation and reassembly: A message is divided into transmittable se gments, with each segment containing a
+sequence number. These numbers enable the transport layer to reassemble the message correctly upon arriving at the
+destination and to identify and replace packets that were lost in transmission.
+* Flow control
+* Error control5. Session Layer
+
+It establishes, maintains, and synchronizes the interaction among communicating systems.
+
+Session layer is responsible for dialog control and synchronization.
+
+Specific responsibilities of the session layer includes:
+
+- Dialog control. The session layer allows two systems to enter into a dialog. It allows the communication
+between two processes to take place in either half duplex (one way at a time) or full-duplex (two ways at a
+time) mode.
+
+- Synchronization. The session layer allows a proc ess to add checkpoints(inspect any packet), or
+synchronization points, to a stream of data.
+
+6. Presentation Layer
+
+presentation layer is concerned with the syntax and semantics of the information exchanged between two
+systems .
+
+Specific responsibilities of the presentation layer includes: the
+
+- Translation (exchanging information the form of character strings, numbers, and so on. The
+presentation layer at the sender changes the info rmation from its sender-dependent format into a
+common format. The presentation layer at the receiving machine changes the common format into its
+receiver-dependent format )
+
+- Encryption : (ensure privacy) (sender transforms the original information to another form and sends
+the resulting message out over the network. Decryption reverses the original process to transform the
+message back to its original form)
+
+- compression :Data compression reduces the number of bits contained in the information. Data
+compression becomes particularly important in the transmission of multimedia such as text, audio, and
+video**Application Layer**
+
+* Provide services to users
+* application layer enables the user, whether human or software, to access the network. It provides user
+interfaces and support for services such as electronic mail, remote file access and transfer, shared
+database management, and other types of distributed information services.
+* Specific services provided:
+    * File transfer, access, and management : This application allows a user to access files (to make changes or
+read data), to retrieve files , and to manage or control files.
+    * Mail services: This application provides the basis for e-mail forwarding and storage
+    * Directory services : This application provides distributed database sources and access for global
+information about various objects and services.
+* Protocols used : FTP , SMTP , HTTP etc1. Host-to-Network Layer
+
+* host-to-network layer is equivalent to the combination of the physical and data link layers
+* The TCP/IP reference model does not really say much about what happens here, except to point out that the host
+has to connect to the network using some protocol so it can send IP packets to it. This protocol is not defined and
+varies from host to host and network to network.

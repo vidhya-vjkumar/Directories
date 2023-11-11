@@ -1,0 +1,133 @@
+Types of computer network (on the basis of area covered)
+1. Personal Area Network (PAN)
+2. Local Area Network (LAN)
+3. Metropolitan Area Network (MAN)
+4. Wide Area Network (WAN)
+
+1. Personal Area Network (PAN)
+- A computer network that connect the devices within the range of a person
+- smallest and most basic type of network
+- Can be wired or wireless
+- Cover small area
+Ex:
+- connection between a Bluetooth earpiece and a smartphone)
+- connects a computer with its peripherals(keyboard, mouse,printer�.)
+
+2. Local Area Network (LAN)
+- Interconnects computers within a limited area such as a residence,school,university campus or office building
+- Its privately-owned networks
+- Operates over a small physical area ie, within a single building or campus of up to a few kilometers in size.
+- Easy to design and maintain
+- WLAN: Wireless LAN �connect devices via Wi-fi to your home network3. Metropolitan Area Network (MAN)
+�A MAN, covers a city.
+�geographical area covered by MAN is larger than LAN but Smaller than WAN
+�The best-known example of a MAN is the cable television network available in many cities.
+�Deliver fast and effective communication by us ing a high speed carrier eg: fiber optic cables
+4. Wide Area Network (WAN)
+�spans a large geographical area, often a country or continent
+�Best example of WAN is internet
+�Internet is considered as the largest WAN in the world
+�communicate devices across the world
+LAN MAN WAN
+Local Area Network Metropolitan Area Network Wide Area Network 
+Coverage Small geographical area Covers cities or towns Large geographical area
+ownership private Private/public Private/public
+Design & 
+maintenance easy difficult difficult
+cost Low cost of set up Moderate cost high
+Error rate in data 
+transmissionVery low error rate low error rate Comparatively high error rate
+Propagation delay short moderate long� A collection of interconnected networks is called an internetwork or internet.
+� An internetwork is formed when distinct networks are interconnected
+� Internet: not a single network, a network of networks
+� Advantages:
+Improved availability
+Improved dataflow
+Increased reach
+Access to knowledge
+� Disadvantages:
+Theft of personal details
+Virus threat
+
+Transmission modes 
+Communication between 2 devices can be
+- Simplex
+- full-duplex
+- half-duplex
+
+In simplex mode, the communication is unidirectional, as on a one-way street. Only one of the two devices on a link can
+transmit; the other can only receive. Ex: keyboard, monitor
+
+In half-duplex mode, each station can both transmit and receive, but not at the same time. When one device is sending,
+the other can only receive, and vice versa. Ex: walkie-talkies
+
+In full-duplex mode, both stations can transmit and receive at same time ie, simultaneously. Ex : telephone networkNetwork Software
+Protocol
+In computer networks, communication occurs between entities in different systems. An entity is anything capable of
+sending or receiving information. However, two entities cannot simply send bit streams to each other and expect to be
+understood. For communication to occur, the entities must agree on a protocol.
+
+A protocol is a set of rules that govern data communications.
+
+A protocol defines what is communicated, how it is communicated, and when it is communicated.
+
+The key elements of a protocol are:
+
+1. Syntax (format or structure of data blocks)
+2. Semantics (it refers to the meaning of each section of data bits. How are a specified pattern to be interpreted; and what
+action is to be taken based on that interpretation
+3. Timing (when data should be sent, how fast they can be sent)
+
+For More Study Materials: https://www.keralanotes.com/Protocol Hierarchies: - Layered architecture
+
+To reduce their design complexity, most networks are organized as a stack of layers or levels, each one built upon the one below it.
+
+The number of layers, the name of each layer, the contents of each layer, and the function of each layer differ from network to network.
+
+Basically, a protocol is an agreement between the communicating parties on how communication is to proceed.
+
+The purpose of each layer is to offer certain services to the higher layers while shielding those layers from the details of how the offered services are actually implemented.
+
+Each layer is offering certain services to the layer above it.
+
+In a layer n architecture, layer n on one machine carries on a conversation with layer n on another machine, and the rules and conventions used in this conversation are collectively known as the layer n protocol.
+
+Lets take an example of the five layered architecture
+
+A five-layer network is illustrated in Fig. 
+
+For More Study Materials: https://www.keralanotes.com/� In reality, no data are directly transferred from layer n on one machine to layer n on another machine. Instead,
+each layer passes data and control information to the layer immediately below it, until the lowest layer is
+reached. i.e., The data and information is passed by each layer to the lower layer.
+� When the lower layer is reached it is passed to the physical medium
+� Below layer 1 is the physical medium through which actual communication occurs.
+� Between each pair of adjacent layers tis an interface . The interface defines which type of operations and
+services t the lower layer offers to the upper layer.
+� Protocols are together called protocol stack or set of protocols And a set of layers and protocols is called
+network architecture.� A message, M, is produced by an application process running in layer 5 and given to layer 4 for transmission. Layer 4
+puts a header in front of the message to identify the message and passes the result to layer 3. The header includes
+control information such as addresses, to allow layer 4 on the destination machine to deliver the message.
+� Consequently, layer 3 must break up the incoming messages into smaller units, packets, prepending a layer 3 header
+to each packet. In this example, Mis split into two parts, M1and M2, that will be transmitted separately. Layer 3
+decides which of the outgoing lines to use and passes the packets to layer 2. Layer 2 adds to each piece not only a
+header but also a trailer, and gives the resulting unit to layer 1 for physical transmission.
+� At the receiving machine the message moves upward, from layer to layer, with headers being stripped off as itprogresses. None of the headers for layers below nare passed up to layer n.
+� header & trailer includes control information, such as s equence numbers, sizes, times, and other control fields
+Design Issues for the Layers
+� Addressing
+� Rules for data transfer
+� Loss of sequencing
+� Error Control
+� Flow Control
+� Inability to accept Long messages
+� Routing
+etc1. Addressing
+2. Error Control
+3. Long messages
+4. Routing
+5. Loss of sequencing
+6. Rules for data transfer
+7. Flow Control
+8. Evolution of the network
+9. Scalability
+10. Confidentiality and Integrity**Connection-Oriented Versus Connectionless Service**
