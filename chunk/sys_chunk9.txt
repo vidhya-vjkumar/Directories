@@ -1,0 +1,50 @@
+62. Data Movement in SIC/XE 
+ Here immediate addressing scheme is used. 
+
+Format: 
+
+MOV DEST, SRC 
+
+Where: 
+
+DEST is the destination register 
+
+SRC is the source register 
+
+Example: 
+
+MOV A, 10 
+
+This instruction means move the value 10 to the register A. 
+
+MOV C, B 
+
+This instruction means move the value in register B to register C.17 
+ 
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+ 
+ 
+Addition (A) 
+Instruction format : A ADD, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: ADD, #100 
+adds the value 100 to the accumulator 
+ 
+Subtraction (S) 
+Instruction format : S SUB, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: S SUB, #100 
+subtracts the value 100 from the accumulator 
+ 
+Multiplication (M) 
+Instruction format : M MUL, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: M MUL, #100 
+multiplies the value 100 to the accumulator 
+ 
+Division (D) 
+Instruction format : D DIV, B 
+where A is the accumulator, and B is the memory location of the operand 
+Example: D DIV, #100 
+divides the accumulator by the value 100 
+ 

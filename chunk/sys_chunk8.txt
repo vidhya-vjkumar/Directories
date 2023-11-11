@@ -1,0 +1,51 @@
+2. Data Movement in SIC/XE 
+Data movement instructions are used to transfer data from one location to another location in memory. 
+1. Move instruction 
+MOVE R1,R2 
+R1 contains the contents of R2. 
+2. Load instruction 
+LD R1,5 
+R1 contains the contents of address 5. 
+3. Store instruction 
+ST 5,R1 
+Address 5 contains the contents of R1. 
+4. Transfer instruction 
+T R1,R2 
+R1 and R2 contains the same contents. 
+5. Exchange instruction 
+X R1,R2 
+R1 and R2 contains the opposite contents. 
+ 
+ 
+3. Comparison of SIC and SIC/XE 
+S.No 
+Feature 
+SIC 
+SIC/XE 
+1. 
+Memory locations 
+16 bit 
+16 bit 
+2. 
+Instruction format 
+2 bytes 
+3 bytes 
+3. 
+Instruction set 
+24 
+36 
+4. 
+Data transfer 
+Move, Load, Store, Transfer, Exchange 
+Move, Load, Store, Transfer, Exchange 
+5. 
+Addressing modes 
+Direct, Indirect, Immediate, Register to register 
+Direct, Indirect, Immediate, Register to register, Base register to register, Index register to register 
+6. 
+Addressing limitations 
+15 bit 
+16 bit 
+7. 
+Number of registers 
+4 

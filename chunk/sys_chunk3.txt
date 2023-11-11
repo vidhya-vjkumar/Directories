@@ -1,0 +1,48 @@
+Language Translators 
+
+* Program that takes input program in one language and produces an output in another 
+language. 
+
+I. Compilers 
+
+* Translates program in high level language in to machine level language. 
+* Conversion or translation is taking place by taking program as whole. 
+* Bridges the semantic gap between language domain and execution domain.  
+* Perform syntax analysis, semantics analysis and intermediate code generation. 
+
+For More Study Materials : https://www.keralanotes.com/4 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST 
+
+II. Interpreters 
+
+* Translates statement of high level language in to machine level language by taking the 
+program line by line. 
+* Interpretation cycle includes: 
+    * Fetch the statement. 
+    * Analyze the statement and determine its meaning. 
+    * Execute the meaning of statement. 
+
+III. Assemblers 
+
+* Programmers found it difficult to read or write programs in machine language, so for 
+convenience they used mnemonic symbols for each instruction which is translated to 
+machine language. 
+* Assemblers translate assembly language to machine language. 
+* Translate mnemonic code to machine language equivalents. 
+* Assign machine address to symbol table. 
+
+
+Working: 
+
+* Find the required information to perform task. 
+* Analyze and design suitable data structures to hold and manipulate information. 
+* Find the process or steps needed to gather information and maintain it. 
+* Determine processing step required to execute each identified task. 
+
+For More Study Materials : https://www.keralanotes.com/5 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+
+COMPILER vs INTERPRETER vs ASSEMBLER 
+

@@ -1,0 +1,82 @@
+**SIC/XE ARCHITECTURE- SIC WITH EXTRA EQUIPMENT**
+
+* Architecture is similar to standard model with certain additional components and
+features.
+
+1. Memory: Maximum memory available on a SIC/XE system is 1MB (220 bytes)
+
+2. Registers: Additional B, S, T and F registers are provided by SIC/XE, in addition to
+the registers of SIC.3. Floating point Data type: There is a 48 bit floating point data type, F*2(e-1024)
+
+4. Instruction format: New set of instruction formats for SIC/XE are as follows:
+a. Format 1 (1 Byte): Contains only operation code
+
+Eg: RSUB ( Return to Subroutine)
+b. Format 2 (2 Bytes): First 8 bits for operation code, next four for register 1 and
+following for register 2.
+
+Eg: COMPR A, S ( Compare contents of register A and S)
+c. Format 3 (3 Bytes) : Here e=0
+
+ First 6 bits contain operation code.
+
+ Next 6 bits contain flags.
+
+ Last 12 bits contain displacement for the address of the operand.S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+Instruction format: 
+a. Format 1 (1 byte): 
+First 4 bits are opcode and remaining 4 bits are operand 
+b. Format 2 (2 bytes): 
+First 6 bits are opcode and remaining 6 bits are operand 
+c. Format 3 (3 bytes): 
+First 6 bits are opcode and remaining 12 bits are target address 
+ 
+d. Format 4 (4 bytes): Here e=1 
+ It is same as format 3 with an extra 2 hex digits for address that require 
+more than 12 bits to be represented. 
+ 
+5. Addressing mode and Flag bits: 
+a. Direct ( x,b and p All set to 0): 
+ 
+TA=Location of operand 
+b. Indirect ( x=1,b=0,p=0): 
+ 
+TA=location of word containing address of operand 
+c. Indexed Indirect (x=0,b=1,p=0): 
+ 
+TA=location of word containing address of word containing address of operand 
+d. Indexed (x=1,b=1,p=0): 
+ 
+TA=location of word containing address of word containing address of operand 
+plus offset 
+e. Indexed with pre-decrement (x=1,b=1,p=1): 
+ 
+TA=location of word containing address of word containing address of operand 
+minus offset 
+f. Indexed with post-increment (x=1,b=1,p=1): 
+ 
+TA=location of word containing address of word containing address of operand 
+plus offset +16. Instruction set:
+i. Instructions that load and store new register ‘B’:
+
+• LDB: Load B register with data from memory location given in address part of instruction.
+• STB: Store data in B register to memory location given in address part of instruction.
+
+ii. Instructions that perform arithmetic operations:
+
+• ADD: Add contents of memory location given in address part to contents of B register and store result in B register.
+• SUB: Subtract contents of memory location given in address part from contents of B register and store result in B register.
+• MUL: Multiply contents of memory location given in address part with contents of B register and store result in B register.
+• DIV: Divide contents of memory location given in address part by contents of B register and store result in B register.
+
+iii. Instructions that perform logical operations:
+
+• AND: Performs logical AND operation on contents of memory location given in address part and contents of B register and store result in B register.
+• OR: Performs logical OR operation on contents of memory location given in address part and contents of B register and store result in B register.
+• NOT: Performs logical NOT operation on contents of B register and store result in B register.
+
+iv. Instructions that control program flow:
+
+• JUMP: Transfers control to instruction at location given in address part of instruction.
+• JZ: Transfers control to instruction at location given in address part if contents of B register is zero.
+• JNZ: Transfers control to instruction at location given in address part if contents of B register is not zero.S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST 

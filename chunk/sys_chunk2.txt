@@ -1,0 +1,81 @@
+
+ MODULE 1 
+
+SOFTWARE
+
+• Set of instructions given to the computer.
+• We cannot touch and feel it.
+• Developed by writing instructions in programming language.
+• Operations of computer are controlled via this.
+• If damaged or corrupted, back up copy can be installed again.
+• Eg:- Antivirus, Microsoft Office Tools.
+
+HARDWARE
+
+• Physical parts of a computer.
+• We can touch and feel it.
+• Constructed using physical components.
+• Operates under control of software.
+• If damaged, can be replaced.
+• Eg:- Keyboard, Monitor, Mouse
+
+SOFTWARE vs HARDWARE
+
+SOFTWARE   
+HARDWARE  
+1. Collection of instructions that tells 
+computer what to do  1. Physical elements of computer  
+2. Divided in to  
+a. System Software  
+b. Application Software  2. Categories  
+a. Input Devices.  
+b. Output Devices  
+For More Study Materials : https://www.keralanotes.com/2 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST
+c. Utility Software
+c. Storage Devices
+3. Should be installed in to computer
+3. Once software is loaded these can be
+used.
+4. Prone to viruses
+4. No virus attacks
+5. If damaged/ corrupted reinstallation
+is possible
+5. If damaged, can be replaced.
+Eg:- Microsoft Office, Adobe
+Eg:- Mouse, Monitor, Keyboard
+
+TYPES OF SOFTWARE
+1. System Software:
+ Contains collection of programs that support operation of computer.
+ Helps to run computer hardware and computer system.
+ Handles running of computer hardware.
+ These are of different types”
+a) Operating System
+b) Language Translators
+i. Compiler
+ii. Assembler
+iii. Interpreter
+iv. Macro Processor
+c) Loader
+d) Linker
+e) Debugger
+f) Text Editor
+
+2. Application Software:
+ It allows end users to accomplish one or more specific tasks.
+ Focus on application or problem to be solved.3 
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST  
+Operating System 
+
+* Acts as interface between user and system.  
+* Provide user friendly interface. 
+* Functions: 
+a) Process Management 
+b) Memory Management 
+c) Resource Management 
+d) I/O Operations 
+e) Data Management 
+f) Provide Security for job. 

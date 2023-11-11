@@ -1,0 +1,91 @@
+
+2. In SIC/XE 
+Addition (A) 
+Instruction format : A ADD #value 
+where A is the accumulator, and value is the immediate value 
+Example: A ADD #100 
+adds the value 100 to the accumulator 
+ 
+Subtraction (S) 
+Instruction format : S SUB #value 
+where A is the accumulator, and value is the immediate value 
+Example: S SUB #100 
+subtracts the value 100 from the accumulator 
+ 
+Multiplication (M) 
+Instruction format : M MUL #value 
+where A is the accumulator, and value is the immediate value 
+Example: M MUL #100 
+multiplies the value 100 to the accumulator 
+ 
+Division (D) 
+Instruction format : D DIV #value 
+where A is the accumulator, and value is the immediate value 
+Example: D DIV #100 
+divides the accumulator by the value 10018
+
+S5-SS Notes, Prepared by Gayathri Dili, Asst.Prof., CSE Dept., SNGIST
+
+2. In SIC/XE
+constant
+
+For More Study Materials: https://www.keralanotes.com/1. INPUT OPERATIONS 
+(i) INPUT Statement 
+The INPUT statement is used to read data from the terminal and store it in a variable. The general format of the INPUT statement is: 
+
+INPUT variable-list 
+
+where variable-list is a list of variables separated by commas. 
+
+For example, the following statement reads the values of the variables A, B, and C from the terminal and stores them in the corresponding variables: 
+
+INPUT A, B, C 
+
+(ii) FORMAT STATEMENT 
+The FORMAT statement is used to specify the format of the data to be read. The general format of the FORMAT statement is: 
+
+FORMAT (format-specification) 
+
+where format-specification is a list of format characters. The format characters specify the type of data to be read and the number of digits to be read. 
+
+For example, the following FORMAT statement specifies that the data to be read is in the form of three integers separated by spaces: 
+
+FORMAT (3I5) 
+
+(iii) EXECUTION 
+When the INPUT statement is executed, the computer reads the data from the terminal and stores it in the variables specified in the variable-list. The data is read until a carriage return is entered. 
+
+For example, the following program reads three integers from the terminal and prints their sum: 
+
+START 
+A, B, C 
+INPUT A, B, C 
+S = A + B + C 
+PRINT S 
+STOP 
+
+2. OUTPUT OPERATIONS 
+(i) PRINT Statement 
+The PRINT statement is used to print data on the terminal. The general format of the PRINT statement is: 
+
+PRINT expression-list 
+
+where expression-list is a list of expressions separated by commas. 
+
+For example, the following statement prints the values of the variables A, B, and C on the terminal: 
+
+PRINT A, B, C 
+
+(ii) FORMAT STATEMENT 
+The FORMAT statement is used to specify the format of the data to be printed. The general format of the FORMAT statement is: 
+
+FORMAT (format-specification) 
+
+where format-specification is a list of format characters. The format characters specify the type of data to be printed and the number of digits to be printed. 
+
+For example, the following FORMAT statement specifies that the data to be printed is in the form of three integers separated by spaces: 
+
+FORMAT (3I5) 
+
+(iii) EXECUTION 
+When the PRINT statement is executed, the computer prints the data specified in the expression-list. The data is printed according to the format specified in the FORMAT statement.20
