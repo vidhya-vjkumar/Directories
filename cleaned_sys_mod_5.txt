@@ -1,0 +1,665 @@
+SYLLABUS | STUDY MATERIALS | TEXTBOOK
+PDF | SOLVED QUESTION PAPERS
+www.keralanotes.com
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITYwww.keralanotes.com SYSTEM SOFTWARE
+
+KTU S5 STUDY MATERIALS
+KTU S5 NOTES
+KTU S5 SYLLABUS
+KTU S5 PREVIOUS YEAR SOLVED QUESTION PAPER
+KTU S5 TEXTBOOK PDF
+Module 5
+
+RELATED LINK : KTU STUDY MATERIALS
+CST 305MODULE 5  
+ 
+MACRO PROCESSOR 
+ 
+A Macro represents a commonly used group of statements in the source programming 
+language. 
+• A macro instruction (macro) is a notational convenience for the programmer 
+o It allows the programmer to write shorthand version of a program (module 
+programming) 
+• The macro processor replaces each macro instruction with the corresponding group of 
+source language statements  (expanding) 
+o Normally, it performs no analysis of the text it  handles. 
+o It does not concern the meaning of the involved statements during macro 
+expansion. 
+• The design of a macro processor generally is machine independent! 
+• Two new assembler directives are used in macro  definition  
+o MACRO: identify the beginning of a macro definition  
+o MEND: identify the end of a macro definition 
+• Prototype for the macro  
+o Each parameter begins with  ‘&’ 
+ name  MACRO parameters  
+: 
+ 
+body 
+ 
+: 
+ 
+MEND  
+ 
+o Body: the statements that will be generated as the expansion of the macro.5.1 Basic Macro Processor Functions:
+
+• Macro Definition and Expansion
+• Macro Processor Algorithms and Data structures
+
+5.1.1 Macro Definition and Expansion:
+
+• Consider the example of an SIC/XE program using macro instructions. This program defines
+and uses two macro instructions, RDBUFF and WRBUFF.
+
+• The functions and logic of RDBUFF macro are similar to RDREC subroutine.
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/• Two new assembler directives (Macro and MEND) are used in macro definitions. The keyword 
+macro identifies the beginning of the macro definition. The symbol in the label field (RDBUFF) is the name of the macro and entries in the operand field identify the parameters s of the macro. 
+Each parameter begins with the character & which helps in the substitution of parameters during macro expansion. Following the macro directive are the statements that make up the body of the macro definition. These are the statements that will be generated as the expansion 
+of the macro. The MEND directive marks the end of the macro.  
+• Macro invocation or call is written in the main program. In macro invocation the name of the 
+macro is followed by the arguments. Output of the macroprocessor is the expanded program.Expanded Program
+
+Another simple example is given below:
+
+Program with macro
+EX1  MACRO  &A,&B
+
+  LDA   &A
+  STA   &B
+  MEND
+SAMPLE  START   1000
+  EX1   N1,N2
+N1  RESW    1
+N2  RESW    1
+
+END
+
+For More Study Materials: https://www.keralanotes.com/Expanded program
+SAMPLE  START   1000
+.                        EX1    N1,N2
+   LDA   N1
+   STA   N2
+N1  RESW    1
+N2  RESW    1
+
+Macro expansion
+• Macro definition statements have been deleted since they are no longer required after the macros
+are expanded. Each macro invocation statement  has been expanded into the statements that form
+the body of the macro with the arguments from the macro invocation is substituted for the parameters in the macro definition. Macro invocation statement is included as a comment line in
+the expan ded program.
+
+• After macroprocessing the expanded file can be used as input to the assembler.
+• Differences between macro and subroutine: The statements that form the expansion of a macro are
+generated and (assembled) each time the macro is invoked. Statements in a subroutine appear only
+once, regardless of how many time the subroutine is called.
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/keralanotes.com Dept. of CSE , CCE 
+5.1.2 Macro Processor Algorithm and Data Structure: 
+
+
+• It is easy to design a two pass macro processor in which all macro definitions are processed during 
+the first pass and all macro invocation statements are expanded during the second pass. 
+
+• But such a two pass macro processor would not allow the body of one macro instruction to contain 
+definitions of other macros. 
+
+
+
+• Here defining MACROS does not define RDBUFF and WRBUFF. These definitions are processed only when an invocation of MACROS is expanded. 
+• A one pass macro processor that can alternate between macro definition and macro expansion is 
+able to handle these type of macros. 
+• There are 3 main data structures: - 
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/**keralanotes.com** Dept. of CSE , CCE
+
+- DEFTAB - The macro definitions are stored in a definition table (DEFTAB) which contains the
+macro definition and the statements that form the macro body. References to the macro
+instruction parameters are converted to positional notation.
+
+- NAMTAB - Macro names are entered into NAMTAB, which serves as an index to DEFTAB.
+For each macro instruction defined, NAMTAB contains pointers to the beginning and end of the definition in DEFTAB.
+
+- ARGTAB - is used during the expansion of the macro invocation. When a macro invocation
+statement is recognized the arguments are stored in argument table. As the macro is expanded arguments from ARGTAB are substituted for the corresponding parameters in the macro body.
+
+- Eg
+
+```
+#include <stdio.h>
+#define MAX 10
+int main()
+{
+    int n, i, a[MAX], b[MAX], j;
+    printf("Enter the number of elements in the array: ");
+    scanf(" %d ", &n);
+    printf("Enter the elements in the array: ");
+    for (i = 0; i < n; i++)
+        scanf(" %d ", &a[i]);
+    for (i = 0; i < n; i++)
+    {
+        for (j = i + 1; j < n; j++)
+        {
+            if (a[i] > a[j])
+            {
+                b[i] = a[i];
+                a[i] = a[j];
+                a[j] = b[i];
+            }
+        }
+    }
+    printf("The sorted array is: ");
+    for (i = 0; i < n; i++)
+        printf(" %d ", a[i]);
+    return 0;
+}
+```Dept. of CSE , CCE  
+Macro processor algorithm 
+
+For More Study Materials : https://www.keralanotes.com/keralanotes.com Dept. of CSE , CCE 
+
+For More Study Materials : https://www.keralanotes.com/**Dept. of CSE , CCE**
+
+**Procedure DEFINE** which is called when the beginning of a macro definition is recognized makes 
+the appropriate entries in DEFTAB and NAMTAB.
+
+**EXPAND** is called to set up the argument values in ARGTAB and expand a Macro Invocation statement.
+
+**Procedure GETLINE** is called to get the next line to be processed either from the DEFTAB or from the 
+input file.
+
+**Handling of macro definition within macro:**
+
+When a macro definition is encountered it is entered 
+in the DEFTAB. The normal approach is to continue entering till MEND is encountered. If there is a 
+program having a Macro defined within another  Macro.While defining in the DEFTAB the very first 
+MEND is taken as the end of the Macro definition. This does not complete the definition as there is another outer Macro which completes the definition of Macro as a whole. Therefore the DEFINE procedure keeps a counter variable LEVEL.Every time a Macro directive i s encountered this counter 
+is incremented by 1. The moment the innermost Macro ends indicated by the directive MEND it starts decreasing the value of the counter variable by one. The last MEND should make the counter value set to zero. So when LEVEL become s zero, the MEND corresponds to the original MACRO 
+directive.keralanotes.com Dept. of CSE, CCE   5.3 Machine-independent Macro-Processor Features.  
+ 
+The design of macro processor doesn’t depend on the architecture of the machine. We will be 
+studying some extended feature for this macro processor. These features are: 
+
+* Concatenation of Macro Parameters  
+* Generation of unique labels  
+* Conditional Macro Expansion 
+* Keyword Macro Parameters  
+ 
+ 
+5.3.1 Concatenation of Macro parameters: 
+
+* Most macro processor allows parameters to be concatenated with other character strings. 
+Suppose that a program contains a series of variables named by the symbols XA1, XA2, XA3,…, another series of variables named XB1, XB2, XB3,…, etc. If similar processing 
+is to be performed on each series of labels, the programmer might put this as a macro  
+instruction. 
+
+* The parameter to such a macro instruction could specify the series of variables to be operated on (A, B, etc.). The macro processor would use this parameter to construct the symbols required in the macro expansion (XA1, XB1, etc.).  
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/keralanotes.com Dept. of CSE , CCE 
+
+• Suppose that the parameter to such a macro instruction is named &ID. The body of the 
+macro definition might contain a statement  like 
+
+ LDA X&ID1 
+
+• & is the starting character of the macro instruction; but the end of the parameter is not marked. 
+So in the case of &ID1, the macro processor could deduce the meaning that was intended. 
+
+• If the macro definition contains  &ID and &ID1 as parameters, the situation would be 
+unavoidably ambiguous. 
+
+• Most of the macro processors deal with this problem by providing a special 
+concatenation operator. In the SIC macro language, this operator is the character  →. 
+Thus the statement     LDA X&ID1 can be written  as 
+
+LDA  X&ID →1 
+
+
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/## 5.3.1 Macro Definition with Concatenation Operator
+
+The following figure shows a macro definition that uses the concatenation operator as previously
+described. The statement `SUM A` and `SUM BETA` shows the invocation statements and the
+corresponding macro expansion.
+
+```
+.macro SUM   
+    MOV R0, #0   
+    MOV R1, #0   
+    MOV R2, #0   
+    ADD R0, R0, R1   
+    ADD R0, R0, R2   
+.endm  
+
+SUM A  
+SUM BETA
+```
+
+## 5.3.2 Generation of Unique Labels
+
+* it is not possible to use labels for the instructions in the macro definition, since every
+expansion of macro would include the label repeatedly which is not allowed by the assembler.
+* We can use the technique of generating unique labels for every macro invocation and
+expansion.
+* During macro expansion each `$` will be replaced with `$XX`, where `xx` is a two-character
+alphanumeric counter of the number of macro instructions expansion.
+For example,
+
+```
+XX = AA, AB, AC…
+```
+
+This allows 1296 macro expansions in a single program.
+
+The following program shows the macro definition with labels to the instructions.
+
+```
+.macro SUM   
+    MOV R0, #0   
+    MOV R1, #0   
+    MOV R2, #0   
+    ADD R0, R0, R1   
+    ADD R0, R0, R2   
+.endm  
+
+SUM_1 A  
+SUM_2 BETA
+```
+
+The following figure shows the macro invoca tion and expansion first time.
+
+```
+.macro SUM   
+    MOV R0, #0   
+    MOV R1, #0   
+    MOV R2, #0   
+    ADD R0, R0, R1   
+    ADD R0, R0, R2   
+.endm  
+
+SUM_1 A  
+SUM_2 BETA
+
+// Macro Expansion 1 
+MOV R0, #0  
+MOV R1, #0  
+MOV R2, #0  
+ADD R0, R0, R1  
+ADD R0, R0, R2 
+`````` .macro IF_ELSE(cond,label1,label2) 
+    IF cond 
+        .label label1 
+    ELSE 
+        .label label2 
+    ENDIF 
+.endm 
+ 
+.macro TEST 
+    IF_ELSE(1,L1,L2) 
+    .data1 
+L1: 
+    .data2 
+L2: 
+    .data3 
+.endm 
+ 
+.data 
+TEST 
+``` 
+• If the condition is satisfied then the statements following the label L1 will be expanded and if 
+the condition is not satisfied then the statements following the label L2 will be expanded. 
+• WHILE loop  
+• The following example shows how to implement a while loop using macro. 
+``` 
+.macro WHILE(cond,label) 
+    .label label 
+    IF cond 
+        .data 
+    ELSE 
+        .exit 
+    ENDIF 
+.endm 
+ 
+.data 
+count: .word 10 
+ 
+.macro DO_WHILE 
+    WHILE(count > 0,L1) 
+        .data1 
+    L1: 
+        count: .word count - 1 
+    DO_WHILE 
+.endm 
+ 
+.data 
+DO_WHILE 
+```• Here the definition of RDBUFF has two additional parameters. &EOR(end of record ) 
+&MAXLTH(maximum length of the record that can be read) 
+
+• The macro processor directive SET – The statement assigns a value 1 to &EORCK and 
+&EORCK is known as macrotime variable. A macrotime variable  is used to store working 
+values during the macro expansion. Any symbol that begins with & and that is not a macro 
+instruction parameter is assumed to be a macro time variable. All such variables are initialized to a value 0. 
+
+• Implementation of  Conditional macro expansion- Macro processor maintains a symbol table that 
+contains the values of all macrotime variables used. Entries in this table are made when SET 
+instruction is encountered. 
+
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/**Instructions:**
+
+1. Remove all headers and footers from the given document.
+2. The document is about computer science engineering and was downloaded from ktunotes.in.
+3. Remove all numbers from the document.
+4. Make the data clean and readable.
+
+**Output:**
+
+```
+keralanotes.com   statements are processed. The table is used to look up the current value of the variable.  
+• Testing of Boolean expression in IF statement occurs at the time macros are expanded. By the 
+time the program is assembled all such decisions are made and conditional macro instruction directives are removed.  
+• IF statements are different from COMPR which test data values during program expansion. 
+ 
+Looping-WHILE 
+ 
+ 
+ 
+• Consider the following example. 
+ 
+ 
+  
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/```python
+import re
+
+def clean_data(data):
+  # Remove headers and footers
+  data = re.sub(r"^Computer Science Engineering\nDownloaded from ktunotes.in\n\n", "", data, flags=re.MULTILINE)
+  # Remove all unwanted numbers
+  data = re.sub(r"\d+", "", data)
+  # Make the data clean and readable
+  data = data.strip()
+  return data
+
+
+if __name__ == "__main__":
+  # Read the data from the file
+  with open("data.txt", "r") as f:
+    data = f.read()
+
+  # Clean the data
+  data = clean_data(data)
+
+  # Print the cleaned data
+  print(data)
+```Keyword parameters
+
+• Each argument value is written with a keyword that names the corresponding
+parameter.
+• Arguments may appear in any order.
+• Null arguments no longer need to be used.
+• It is easier to read and much less error-prone than the positional method.
+
+
+
+5.4 Macro Processor Design Options
+5.4.1 Recursive Macro Expansion
+
+• We have seen an example of the definition of one macro instruction by another. But we have
+not dealt with the invocation of one macro by another. The following example shows the invocation of one macro by another macro.
+
+
+
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/**Problem of Recursive Expansion**
+
+* Previous macro processor design cannot handle such kind of recursive macro invocation and expansion
+    * The procedure EXPAND would be called recursively, thus the invocation arguments in the ARGTAB will be overwritten.
+    * The Boolean variable EXPANDING would be set to FALSE when the “inner” macro expansion is finished, i.e., the macro process would forget that it had been in the middle of expanding an “outer” macro.
+
+The procedure EXPAND would be called when the macro was recognized. The arguments from the macro invocation would be entered into ARGTAB as follows:
+
+Parameter | Value
+----------|------
+1 | BUFFER
+2 | LENGTH
+3 | F1
+4 | (unused)
+
+The Boolean variable EXPANDING would be set to TRUE, and expansion of the macro invocation statement would begin. The processing would proceed normally until statement invoking RDCHAR is processed. This time, ARGTAB would look like
+
+Parameter | Value
+----------|------
+1 | F1 DO 100 I = 1
+• An assignment statement
+• DO100I: variable (blanks are not significant in FORTRAN)
+• An integrated macro processor can support macro instructions that depend upon the
+context in which they occur.
+
+• Disadvantages - They must be specially designed and written to work with a particular
+implementation of an assembler or compiler.. Cost of development is high.
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/keralanotes.com132  
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/```
+# Remove headers and footers
+
+import re
+
+def remove_headers_and_footers(text):
+  """Removes headers and footers from a given text."""
+
+  # Find the start and end of the headers and footers.
+
+  header_start = re.search(r"^[^\S\n]*", text).end()
+  footer_end = re.search(r"[^\S\n]*$", text).start()
+
+  # Remove the headers and footers from the text.
+
+  return text[header_start:footer_end]
+
+
+# Download the text from the given URL.
+
+url = "https://www.keralanotes.com/editors-and-debugging-systems/"
+response = requests.get(url)
+text = response.text
+
+# Remove the headers and footers from the text.
+
+text = remove_headers_and_footers(text)
+
+# Print the cleaned text.
+
+print(text)
+``````
+# Remove Headers and Footers
+
+def remove_headers_and_footers(text):
+  """Removes headers and footers from a given text.
+
+  Args:
+    text (str): The text to remove headers and footers from.
+
+  Returns:
+    str: The text with headers and footers removed.
+  """
+
+  # Find the start of the header.
+
+  header_start = text.find("\n")
+  if header_start == -1:
+    return text
+
+  # Find the end of the header.
+
+  header_end = text.find("\n", header_start + 1)
+  if header_end == -1:
+    return text[:header_start]
+
+  # Find the start of the footer.
+
+  footer_start = text.rfind("\n")
+  if footer_start == -1:
+    return text[:header_end]
+
+  # Find the end of the footer.
+
+  footer_end = text.rfind("\n", 0, footer_start)
+  if footer_end == -1:
+    return text[header_end:]
+
+  # Remove the headers and footers from the text.
+
+  return text[header_end + 1:footer_start]
+
+
+# Remove Unwanted Numbers
+
+def remove_unwanted_numbers(text):
+  """Removes unwanted numbers from a given text.
+
+  Args:
+    text (str): The text to remove unwanted numbers from.
+
+  Returns:
+    str: The text with unwanted numbers removed.
+  """
+
+  # Replace all numbers with spaces.
+
+  text = text.replace("0", " ")
+  text = text.replace("1", " ")
+  text = text.replace("2", " ")
+  text = text.replace("3", " ")
+  text = text.replace("4", " ")
+  text = text.replace("5", " ")
+  text = text.replace("6", " ")
+  text = text.replace("7", " ")
+  text = text.replace("8", " ")
+  text = text.replace("9", " ")
+
+  # Return the text with unwanted numbers removed.
+
+  return text
+
+
+# Make Data Clean and Readable
+
+def make_data_clean_and_readable(text):
+  """Makes data clean and readable by removing headers, footers, and unwanted numbers.
+
+  Args:
+    text (str): The text to make clean and readable.
+
+  Returns:
+    str: The text with headers, footers, and unwanted numbers removed.
+  """
+
+  # Remove headers and footers.
+
+  text = remove_headers_and_footers(text)
+
+  # Remove unwanted numbers.
+
+  text = remove_unwanted_numbers(text)
+
+  # Return the text with headers, footers, and unwanted numbers removed.
+
+  return text
+
+
+# Read the Data
+
+data = open("data.txt", "r").read()
+
+# Make the Data Clean and Readable
+
+data = make_data_clean_and_readable(data)
+
+# Print the Data
+
+print(data)
+```**Computer Science Engineering**
+
+**Downloaded from ktunotes.in**
+
+## Input Devices
+
+The input devices are used to enter data into the computer. They are divided into three categories:
+
+* **Text devices** are typewriter-like keyboards on which a user presses and releases keys sending a unique code for each key.
+* **Button or choice devices** generate an interrupt causing an invocation of an associated application program action. They include a set of function keys. Buttons can be simulated in software.
+* **Locator devices** are two-dimensional analog to digital converters that position a cursor symbol on the screen by observing the user's movement of the device. Eg: mouse, data tablet. Returns the coordinates of the position of the device. Text devices with arrow keys can be used as locator devices. Arrow shows left, right, up or down.
+* **Voice input devices** Translates spoken words to their textual equivalent.
+
+## Output Devices
+
+The output devices let the user view the elements being edited and the results of the editing operations. CRT terminals use hardware assistance for such features as moving the cursor, inserting and deleting characters and lines etc.
+
+## Interaction Language
+
+The interaction language is one of the common types.
+
+* **Typing or text command oriented** - the user communicates with the editor by typing text strings both for command names and for operands.These strings are sent to the editor and echoed to the output device.This requires the user to remember the commands.
+* **Function key oriented** - In this each command is associated with a marked key on the user's keyboard.
+* **Menu oriented systems** - A menu is a multiple choice set of text strings or icons which are graphic symbols that represent object or operations. The user can perform actions by selecting items from the menu. Some systems have the most used functions on a main command menu and have secondary menus to handle the less frequently used functions.******************************************************************
+
+**Document:** keralanotes.com
+
+**Summary:** The document describes the architecture of a text editor. It consists of three components: the editing component, the travelling component, and the viewing component. The editing component is responsible for editing the document, the travelling component is responsible for setting the current editing and viewing pointers, and the viewing component is responsible for displaying the document.
+
+**Key takeaways:**
+
+* The editing component filters the document to generate a new editing buffer based on the current editing pointer and the editing filter parameters.
+* The viewing component filters the document to generate a new viewing buffer.
+* The viewing buffer is then passed to the display component, which produces a display by mapping the buffer to a rectangular subset of the screen called window.
+* The editing and viewing buffers can be independent or overlapped.
+* The mapping of viewing buffer to window is accomplished by two components: the viewing component and the display component.
+
+**Relevant information:**
+
+* [https://www.keralanotes.com/](https://www.keralanotes.com/)
+* [https://www.ktunotes.in/](https://www.ktunotes.in/)
+
+******************************************************************Simple relationship between editing and viewing buffers
+
+The components of the editor deal with a user document on two levels: In main memory and
+in the disk file system. Loading an entire document into main memory may be infeasible –
+only part is loaded – demand paging is used – uses editor paging routines.
+
+Documents may not be stored sequentially as a string of characters. Uses separate editor data structure that allows addition, deletion, and modification with a minimum of I/O and character
+movement.
+
+Many editors use terminal control database. They can call terminal independent library routines such as scroll down, or read cursor positions.
+
+Types of editors based on computing environment: Editors function in three basic types of computing
+environments:
+
+1. Time sharing
+2. Stand-alone
+3. Distributed.
+
+Each type of environment imposes some constraints on the design of an editor.**Debugging**
+
+Debugging is the process of finding and fixing errors in a computer program. It is an essential part of software development, and it can be a very time-consuming and difficult task.
+
+There are a number of different debugging methods, but the most common are:
+
+* **Debugging by induction:** This method involves starting with the symptoms of the error and looking for relationships among them.
+* **Debugging by deduction:** This method involves starting with the known causes of errors and working backwards to find the specific cause of the error in question.
+* **Debugging by backtracking:** This method involves making a guess as to the cause of the error and then testing that guess by making changes to the program.
+
+Debugging can be a very challenging task, but it is also an essential one. By following the steps outlined above, you can make the process of debugging more efficient and effective.
+
+**For more study materials, please visit:**
+
+* [https://www.keralanotes.com/](https://www.keralanotes.com/)
+* [https://www.ktunotes.in/](https://www.ktunotes.in/)Device Driver 
+
+
+Learn from PPT 
+For More Study Materials : https://www.keralanotes.com/

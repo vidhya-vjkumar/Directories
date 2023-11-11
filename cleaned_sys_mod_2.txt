@@ -1,0 +1,289 @@
+SYLLABUS | STUDY MATERIALS | TEXTBOOK
+PDF | SOLVED QUESTION PAPERS
+www.keralanotes.com
+APJ ABDUL KALAM TECHNOLOGICAL UNIVERSITYSystem Software KTU S5 NOTES 
+
+## Unit I: Introduction to Software Engineering
+
+### 1.1 Software Engineering: Definition, Scope, and Objectives
+
+### 1.2 Software Engineering Process
+
+### 1.3 Software Development Life Cycle (SDLC)
+
+### 1.4 Software Requirements
+
+### 1.5 Software Design
+
+### 1.6 Software Implementation
+
+### 1.7 Software Testing
+
+### 1.8 Software Maintenance
+
+### 1.9 Software Quality Assurance
+
+### 1.10 Software Project Management
+
+### 1.11 Software Engineering Tools and Techniques
+
+### 1.12 Ethics in Software Engineering
+
+## Unit II: Software Requirements Engineering
+
+### 2.1 Software Requirements Specification (SRS)
+
+### 2.2 Software Requirements Elicitation
+
+### 2.3 Software Requirements Validation
+
+### 2.4 Software Requirements Management
+
+## Unit III: Software Design
+
+### 3.1 Software Architecture
+
+### 3.2 Design Patterns
+
+### 3.3 Object-Oriented Design
+
+### 3.4 Data Structures and Algorithms
+
+### 3.5 Software Testing
+
+### 3.6 Software Quality Assurance
+
+## Unit IV: Software Implementation
+
+### 4.1 Software Coding
+
+### 4.2 Software Unit Testing
+
+### 4.3 Software Integration Testing
+
+### 4.4 Software System Testing
+
+### 4.5 Software Deployment
+
+## Unit V: Software Maintenance
+
+### 5.1 Software Maintenance Activities
+
+### 5.2 Software Maintenance Strategies
+
+### 5.3 Software Reengineering
+
+### 5.4 Software Disposal
+
+## Unit VI: Software Project Management
+
+### 6.1 Software Project Planning
+
+### 6.2 Software Project Scheduling
+
+### 6.3 Software Project Budgeting
+
+### 6.4 Software Project Risk Management
+
+### 6.5 Software Project Communication
+
+### 6.6 Software Project Control
+
+## Unit VII: Software Engineering Tools and Techniques
+
+### 7.1 Software Engineering Tools
+
+### 7.2 Software Engineering Techniques
+
+## Unit VIII: Ethics in Software Engineering
+
+### 8.1 Software Engineering Ethics
+
+### 8.2 Software Engineering Code of EthicsMODULE -2 
+
+ASSEMBLERS-1 
+
+2.1 Basic Assembler Functions: 
+
+
+
+Figure 1 
+
+
+
+
+
+
+• Figure 2 shows SIC program which contains a main routine that reads records from an input device (F1) and 
+copies that to an output device (05). This main routine calls subroutine RDREC to read a record into a 
+buffer and subroutine WRREC to write the record from the buffer to the output device. Each subroutine must transfer one byte at a time. The end of each record is marked with a null character(hexa decimal 00). 
+The end of the file to be copied is indicated by a zero length record. When the end of the file is detected  the 
+program writes EOF on the output device. And terminates by executing RSUB instruction and returns to the 
+OS. Length of the buffer is 4096 bytes. 
+For More Study Materials : https://www.keralanotes.com/
+https://www.keralanotes.com/```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kerala Notes</title>
+</head>
+<body>
+<h1>Kerala Notes</h1>
+<p>For more study materials, visit <a href="https://www.keralanotes.com/">https://www.keralanotes.com/</a></p>
+</body>
+</html>
+```**SIC Assembler Directive:**
+
+In addition to the machine instructions, assembler directives are also used in programs. Assembler directives are pseudo instructions. They provide instructions to the assembler itself. They are not translated into machine code.
+
+* **START** - Specify name and starting address for the program.
+* **END** - Indicate the end of the source program and (optionally) specify the first executable instruction in the program.
+* **BYTE** - Generate character or hexadecimal constant, occupying as many bytes as needed to represent the constant.
+* **WORD** - Generate one word integer constant.
+* **RESB** - Reserve the indicated number of bytes for a data area.
+* **RESW** - Reserve the indicated number of words for a data area.
+
+**A Simple SIC Assembler**
+
+Figure 3 shows the same program as in figure 2 with the generated object code for each statement.
+
+For More Study Materials: https://www.keralanotes.com/```
+
+```• The translation of source program to object code requires to accomplish the following basic functions:
+
+1. Convert mnemonic operation codes to their machine language equivalents. Eg: translate STL to 14.
+2. Convert symbolic operands to their equivalent machine addresses. Eg: translate RETADR to 1033
+3. Build the machine instructions in the proper format
+4. Convert the data constants specified in the source program into their internal machine representations.- e g: translate EOF to 454F46
+
+5. Write the object program and assembly listing.
+
+• All these functions except the second one can be easily accomplished by sequential processing of the source program, one line at a time.The instruction(line 10) contains a forward reference, that is a reference to a label that is defined later.
+So most of the assemblers makes two passes. The first pass scans the program for labels and assign addresses. The second pass performs the actual translation.
+
+The assembler must process assembler directives. They are not translated into machine language. But they provide instructions to assembler itself.
+
+Finally the assembler must write the generated object code to some output device. The object program will later be loaded into memory for execution.
+
+Object Program format
+
+The simple object program contains three types of records: Header record, Text record and end record.
+
+The header record contains the starting address and length. Text record contains the translated instructions and data of the program, together with an indication of the addresses where these are to be loaded. The end record marks the end of the object program and specifies the address where the execution is to begin.
+
+The format of each record is as given below.
+
+Header record:
+Col 1 H
+
+Col. 2-7 Program name
+
+Col 8-13 Starting address of object program (hexadecimal)
+Col 14-19 Length of object program in bytes (hexadecimal)
+
+Text record:
+Col. 1 T
+
+Col 2-7. Starting address for object code in this record (hexadecimal)
+Col 8-9 Length off object code in this record in bytes (hexadecimal)
+Col 10-69 Object code, represented in hexadecimal (2 co lumns per byte of object code)• Figure 2.3 shows the object program corresponding to figure 2.2. The ˄symbol is used to separate the fields.
+
+• The assembler can be designed either as a single pass assembler or as a two pass assembler.
+The general description of both passes is as given below:
+• Pass 1 (define symbols)
+– Assign addresses to all statements in the  program
+– Save the addresses assigned to all labels for use in Pass  2
+– Perform some processing of assembler directives, including those for address
+assignment, such as BYTE and  RESW  etc.
+• Pass 2 (assemble instructions and generate object program)
+– Assemble instructions (generate opcode and look up addresses)
+– Generate data values defined by BYTE,  WORD
+– Perform processing of assembler directives not done during Pass 1
+– Write the object program and the assembly listing**Assembly Language**
+
+Assembly language is a low-level programming language that is used to directly access the hardware of a computer. It is a human-readable form of machine code, which is the language that the computer's CPU understands. Assembly language is typically used for writing device drivers, operating systems, and other low-level software.
+
+**Pass 1 of the Assembly Process**
+
+The first pass of the assembly process is responsible for reading the assembly language source code and generating an intermediate file. This file contains the assembly language source code along with its corresponding machine code. The intermediate file is also used to generate a symbol table, which is a list of all the symbols used in the assembly language source code.
+
+**Pass 2 of the Assembly Process**
+
+The second pass of the assembly process is responsible for taking the intermediate file and generating the final machine code. The final machine code is a binary file that can be loaded into the computer's memory and executed.
+
+**LOCCTR**
+
+LOCCTR is a variable that is used to keep track of the current location in memory. It is initialized to the beginning address of the program and is incremented by the length of each instruction as it is assembled. LOCCTR is used to generate the machine code for labels and to determine the location of data in memory.
+
+**The Algorithm for Pass 1**
+
+The algorithm for pass 1 of the assembly process is as follows:
+
+1. Scan the first statement START and save the operand field (the address) as the starting address of the program.
+2. Initialize the LOCCTR value to this address.
+3. Write this line to the intermediate file.
+4. If no operand is mentioned, initialize the LOCCTR to zero.
+5. If a label is encountered, enter the symbol in the symbol table along with its associated address value.
+6. If the symbol already exists, set an error flag indicating a duplication of the symbol.
+
+**For More Study Materials**
+
+For more study materials on assembly language, please visit the following websites:
+
+
+**Output:**
+
+```
+It next checks for the mnemonic code, it searches for this code in the OPTAB. If 
+found then the length of the instruction is added to the LOCCTR to make it point to the next instruction. 
+If the opcode is the directive WORD it adds a value 3 to the LOCCTR. If it is RESW, it needs to add the number of data word to the LOCCTR. If it is BYTE it adds the length of the constant in bytes to the LOCCTR, if RESB it adds number of bytes. 
+If it is END directive then it is the end of the program it finds the length of the program by evaluating current L OCCTR – the starting address mentioned in the 
+operand field of the END directive. Each processed line is written to the intermediate 
+file. 
+``````
+
+
+```4. Translation of Base relative instructions
+In this format -3 instruction format is used. The instruction contains the opcode followed by a 12-bit
+displacement value. In Base relative addressing made TA = disp + [B]
+                                                                               disp = TA –[B]
+The displacement calculation process for base relative addressing is much the same as for PC relative
+addressing. In this the programmer must tell the assembler what the base register will contain during
+execution of the program so that assembler can compute displacements. This is done with the assembler
+directive BASE.  For example, the statement BASE LENGTH informs the assembler that the base register
+will contain the address of LENGTH.  The register B will contain this address until another BASE statement
+is encountered.
+If the base register has to be used for another purpose the programmer must use NOBASE directive
+to inform the assembler that the contents of the base register is not used for addressing.
+
+
+5. Translation of Immediate addres sing
+In this no memory reference is involved. Convert the immediate operand into its internal
+representation and insert it into its internal representation.
+Eg:
+
+
+
+6. Translation involving indirect addressing
+In this the displacement is computed to produce the target address.. Then bit n is set to 1.  The
+example given below is indirect and PC relative.
+Eg:
+For More Study Materials: https://www.keralanotes.com/
+https://www.keralanotes.com/Modification record 
+
+Col. 1 M 
+
+Col. 2-7 Starting location of the address field to be modified, relative to  the 
+beginning of the program (Hex) 
+Col. 8-9 Length of the address field to be modified, in half -bytes (Hex) 
+
+One modification record is created for each address to be modified The length is stored in 
+half-bytes (4 bits) The starting location is the location of the byte containing the leftmost bi ts 
+of the address field to be modified. If the field contains an odd number of half-bytes, the starting location begins in the middle of the first byte. 
+
+Eg:  Consider the instruction     CLOOP       +JSUB       RDREC              4B101036 where RDREC is at the address 1036. The modification record for this instruction can be 
+written as  
+                  M00000705 
+
+• There is one modification record for each address field that needs to be changed when the 
+program is relocated(ie. For each format 4 instruction s in the program). 
